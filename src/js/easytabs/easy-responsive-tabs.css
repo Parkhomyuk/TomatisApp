@@ -10,8 +10,8 @@ ul.resp-tabs-list, p {
     list-style: none;
     cursor: pointer;
     float: left;
-	font-size: 15px; 
-	color: #797979; 
+	font-size: 15px;
+	color: #797979;
 	border:none;
 	padding:29px 25px !important;
 	border-bottom:1px solid #eeeeee;
@@ -54,7 +54,7 @@ h2.resp-accordion {
 }
 
 .resp-tab-active {
-	background:#000;
+	background: #5c3486;
 color:#fff !important;
 }
 

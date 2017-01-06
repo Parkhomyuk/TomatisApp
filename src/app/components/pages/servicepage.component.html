@@ -1,0 +1,55 @@
+<!--<div class="container block">
+  <div class="row">
+    <div class="col-md-5">
+
+        <div *ngFor="let pa of pages">
+          <div class="box effect imag-ser">
+            {{pa.id}}
+          </div>
+          <div class="space"></div>
+        </div>
+    </div>
+    <div class="col-md-7 do">
+     &lt;!&ndash; <h5 className="color3">{this.props.name}</h5>
+      <p>{this.props.parag}</p>
+      <ul>{
+        this.props.list.map(function(ell){return <div className="color3">{ell.text}</div>})
+        }
+
+      </ul>
+&ndash;&gt;
+      <button class="btn-default btn-service">Консультация</button>
+
+    </div>
+  </div>
+
+
+</div>-->
+<!-- Promo banner -->
+<div class="container">
+<div class="row">
+
+    <div class="col-md-12" id="m" data-animated="0">
+      <div class="row " *ngFor="let pa of pages">
+        <div class="col-md-5">
+
+
+            <img src="{{pa.pictures}}" class="do-img"/>
+
+
+        </div>
+        <div class="col-md-7 do">
+          <h5 class="title">{{pa.title}}</h5>
+          <p>{{pa.name}}</p>
+          <p class="r-list">{{pa.paraqraph}}</p>
+
+            <div class="list" *ngFor="let par of pa.paragraph2">{{par.list}}</div>
+
+          <a href="#"
+             class="btn-default btn-center ">Консультация</a>
+        </div>
+
+    </div>
+  </div>
+</div>
+</div>

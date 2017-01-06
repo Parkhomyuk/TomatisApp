@@ -1490,7 +1490,7 @@ text-align: center;
 #vertical-tabs h3 {
 	font-size: 20px;
 	text-transform: uppercase;
-	color: #000;
+	color: #160a41;
 	margin: 0 0 25px;
 	text-align: center;
 }
@@ -1587,12 +1587,7 @@ text-align: center;
 	text-align: left;
 }
 
-#timeline li:nth-of-type(even):after {
-	background: -moz-linear-gradient(0,#f43059,#d8d566);
-	background: -webkit-gradient(linear,left top,right top,from(#f43059),to(#d8d566));
-	left: auto;
-	right: 100%;
-}
+
 
 #timeline .t-time {
 	font-size: 16px;
@@ -1619,7 +1614,7 @@ text-align: center;
 	background: #000;
 	position: absolute;
 	left: 0;
-	bottom: -13px;
+	bottom: 0px;
 }
 
 #timeline .t-time span {
@@ -1850,7 +1845,7 @@ text-align: center;
 -------------------------------------------------*/
 
 #m-promo {
-	background: #fff;
+	background: #cda5ff;
 	padding: 30px 30px 20px;
 	overflow: hidden;
 	margin-bottom: 30px;
@@ -2984,7 +2979,7 @@ article p {
 #contact-form .mc-email input:focus ,
 #contact-form .mc-website input:focus {
 	border-color: #000000;
-	color: #5c3486;
+	color: #000;
 	outline: none;
 }
 
@@ -3279,3 +3274,172 @@ aside {
 	max-width: 100%;
 	width:100%;
 }
+
+/*-------------------------------------------------
+               25. Question
+-------------------------------------------------*/
+.answer{
+
+  background-color: #ecddfc;
+
+}
+.answer> p {
+
+}
+
+#question {
+  padding: 10px 10px 0;
+  background: #fff;
+  display: table;
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: rgba(93, 53, 135, 0.91);
+
+}
+#question img{
+  width: 3vw;
+
+}
+#question ul {
+  padding: 0px;
+  text-align: justify;
+}
+
+#question ul li {
+  float: left;
+
+  border-left: none;
+  margin: 0 0 30px;
+  list-style: none;
+  width: 33.333%;
+  text-align: center;
+  padding: 45px 15px;
+  transition: 0.4s;
+}
+
+#question ul li {
+    border-top: 2px solid white;
+}
+
+#question i {
+  font-size: 32px;
+  color: white;
+}
+
+#question h4,h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+  margin: 20px 0 0;
+}
+
+#question p {
+  font-size: 12px;
+  color: white;
+  font-weight: 300;
+  margin: 0;
+}
+
+#question ul li:hover {
+  background: rgba(205, 165, 255, 0.91);
+  cursor: pointer;
+  border-color: #000;
+  transition: 0.4s;
+
+}
+
+#question li:hover i,
+#question li:hover h4,
+#question li:hover p,
+#question li:hover img
+{
+  color: rgba(93, 53, 135, 0.91);
+
+  transition: 0.4s;
+}
+/*==================================================
+ * Effect 2
+ * ===============================================*/
+/*.box {
+  text-align:center;
+  top:40px;
+}*/
+.box {
+  width:70%;
+  height:200px;
+  background-color: #FFFFFF;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 10px auto;
+
+
+}
+.do >  .btn-center {
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+.do > .title, .list {
+  color: rgba(92, 52, 134, 0.91);
+  font-weight: bold;
+}
+.do >.list {
+  padding-top: 0.5vh;
+
+}
+.do-img{
+  margin: 10px auto;
+}
+.r-list{
+  background-color: rgba(255, 255, 255, 0.9);
+}
+/*==================================================
+ * Effect 2
+ * ===============================================*/
+.effect2
+{
+  position: relative;
+  /*background-color: #5c3486*/
+}
+.effect2:before, .effect2:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 35%;
+  top: 20%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.effect2:after
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
