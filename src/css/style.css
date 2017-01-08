@@ -512,6 +512,71 @@ text-align: center;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
 }
+/*-------------------------------------------------
+                4. Intro Slider PageService2
+-------------------------------------------------*/
+
+#introPage2 {
+  margin-bottom: 30px;
+  background: #fff;
+  padding: 30px;
+  background-color: rgba(93, 53, 135, 0.91);
+
+}
+
+#introPage2-slider .owl-buttons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  margin: 0px;
+}
+
+#introPage2-slider .owl-prev {
+  opacity: 1;
+  font-size: 0px;
+  width: 68px;
+  height: 68px;
+  background: url(../img/icons/intro-prev.png) no-repeat;
+  border-radius: 0px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  margin: 0px;
+}
+
+#introPage2-slider .owl-next {
+  opacity: 1;
+  font-size: 0px;
+  width: 68px;
+  height: 68px;
+  background: url(../img/icons/intro-next.png) no-repeat;
+  border-radius: 0px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 0px;
+}
+
+#introPage2-slider .owl-prev:hover {
+  background: url(../img/icons/intro-prev-hr.png) no-repeat;
+}
+
+#introPage2-slider .owl-next:hover {
+  background: url(../img/icons/intro-next-hr.png) no-repeat;
+}
+
+#introPage2-slider .owl-prev ,
+#introPage2-slider .owl-next ,
+#introPage2-slider .owl-prev:hover ,
+#introPage2-slider .owl-next:hover {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
 
 /*-------------------------------------------------
                 5. Welcome Styles
@@ -3264,11 +3329,18 @@ aside {
 	border-bottom: 2px solid #fff;
 	color: #fff;
 	content: attr(data-hover);
-	-webkit-transition: max-width 0.5s;
+  -webkit-transition: max-width 0.5s;
 	-moz-transition: max-width 0.5s;
 	transition: max-width 0.5s;
 }
-
+.menu-effect #heb::before{
+  font-size: 1vh;
+  color: black;
+}
+.menu-effect #rus::before{
+  font-size: 1vh;
+  color: blue;
+}
 .menu-effect a:hover::before,
 .menu-effect a:focus::before {
 	max-width: 100%;

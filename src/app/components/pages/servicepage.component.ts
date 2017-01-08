@@ -79,6 +79,13 @@ class ServicePage{
   paraqraph:string;
   paragraph2:Paragraph2;
 }
+class ServicePage2{
+  id: number;
+  title:string;
+  pictures:string;
+  paraqraph:string;
+  paragraph2:Paragraph2;
+}
 class Paragraph2{
   list: string;
 }
@@ -91,5 +98,6 @@ class Paragraph2{
 export class ServicepageComponent {
     id:number;
     pages=SERVICEPAGE;
+
 
 }

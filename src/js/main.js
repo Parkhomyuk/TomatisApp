@@ -9,6 +9,17 @@ $(document).ready(function () {
         transitionStyle: "fadeUp",
 	   autoPlay: 4000
     });
+//Intro PageService
+  /*$(document).ready(function () {
+    $("#intro-pageslider").owlCarousel({
+      navigation: true,
+      slideSpeed: 600,
+      pagination: false,
+      singleItem: true,
+      transitionStyle: "fadeUp",
+      autoPlay: 4000
+
+  });*/
 
     // blog
     var owl = $("#m-blog");
