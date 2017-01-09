@@ -44,7 +44,7 @@ class ServicePage4{
   id: number;
   title:string;
   pictures:string;
-  paragraph:string;
+  paraqraph:string;
   }
 
 @Component({

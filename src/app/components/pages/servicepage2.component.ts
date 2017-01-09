@@ -41,6 +41,7 @@ let SERVICEPAGE2: ServicePage2[] = [
   { "id": 23,
     pictures:"img/serv/service24.jpg",
     "title":"Проблемы обучения",
+    "paraqraph":"",
     paragraph2:[
       {list:'"ускоряет развитие ребенка;"'},
       {list:'"снимет проблемы необучаемости;"'},
@@ -118,7 +119,7 @@ class ServicePage2{
   title:string;
   pictures:string;
   paraqraph:string;
-  paragraph2:Paragraph2;
+  paragraph2:Paragraph2[];
 }
 class Paragraph2{
   list: string;

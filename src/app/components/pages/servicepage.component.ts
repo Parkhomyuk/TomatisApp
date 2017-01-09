@@ -77,7 +77,7 @@ class ServicePage{
   title:string;
   pictures:string;
   paraqraph:string;
-  paragraph2:Paragraph2;
+  paragraph2:Paragraph2[];
 }
 class ServicePage2{
   id: number;
