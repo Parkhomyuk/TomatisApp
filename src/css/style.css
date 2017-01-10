@@ -3156,7 +3156,7 @@ article p {
 
 .cf-info ul li {
 	padding: 35px 25px 30px;
-	color: #000000;
+	color: #5c3486;
 	border: 2px solid #000;
 	margin: 0 2%;
 	list-style: none;
@@ -3164,6 +3164,7 @@ article p {
 	width: 29.333333%;
 	transition: .3s;
 	cursor: pointer;
+
 }
 
 .cf-info ul li span {
@@ -3182,6 +3183,7 @@ article p {
 	transform: rotate(-45deg);
 	display: table;
 	font-size: 18px;
+
 }
 
 .cf-info ul li h5 {
@@ -3196,7 +3198,7 @@ article p {
 
 .cf-info ul li:hover {
 	border: 2px solid #000;
-	background: #000;
+	background: #8061c2;
 	transition: .3s;
 }
 

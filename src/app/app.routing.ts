@@ -11,6 +11,7 @@ import {Servicepage2Component} from "./components/pages/servicepage2.component";
 import {Servicepage3Component} from "./components/pages/servicepage3.component";
 import {Servicepage4Component} from "./components/pages/servicepage4.component";
 import {Servicepage5Component} from "./components/pages/servicepage5.component";
+import {AboutComponent} from "./components/about/about.component";
 
 //noinspection TypeScriptValidateTypes
 const appRoutes: Routes=[
@@ -57,7 +58,12 @@ const appRoutes: Routes=[
   {
     path:'contactpage',
     component:ContactpageComponent
+  },
+  {
+    path:'about',
+    component:AboutComponent
   }
+
 ];
 
 export const routing: ModuleWithProviders= RouterModule.forRoot(appRoutes);
