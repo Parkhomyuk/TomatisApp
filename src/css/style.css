@@ -1053,7 +1053,7 @@ text-align: center;
 }
 
 .mb-thumb {
-	position: relative;
+	/*position: relative;*/
 }
 
 .date {
@@ -1064,7 +1064,7 @@ text-align: center;
 	top: 0px;
 	right: 0px;
 	font-family: Montserrat;
-	font-size: 18px;
+	font-size: 10px;
 	font-weight: bold;
 	text-transform: uppercase;
 	color: #000;
@@ -2825,6 +2825,14 @@ canvas {
 	transform: rotate(45deg);
 	color: #000;
 	display: table;
+}
+.page-nav ul li div {
+  width: 31px;
+  height: 33px;
+  border: 1px solid #d6d6d6;
+  transform: rotate(45deg);
+  color: #000;
+  display: table;
 }
 
 .page-nav ul li a span {

@@ -2,8 +2,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="col-md-12" id="m-contact" data-animated="0">
-      <h3>Напишите нам</h3>
-
+      <h3>Send us a message</h3>
       <form class="contact-form" data-animated="0" id="contactForm" action="php/contact.php" method="post">
         <div class="row">
           <div class="col-md-6">
@@ -15,10 +14,10 @@
               <input type="email" name="senderEmail" id="senderEmail" placeholder="Email Address" Required>
               <span><i class="fa fa-envelope-o"></i></span>
             </div>
-            <div class="mc-website">
-              <input type="text" name="call" id="subject" placeholder="telephon">
-              <span><i class="fa fa-phone"></i></span>
-            </div>
+            <div class="mc-phone">
+            <input type="text" name="subject" id="subject" placeholder="telephon">
+            <span><i class="fa fa-phone"></i></span>
+          </div>
           </div>
           <div class="col-md-6">
             <div class="mc-message">
@@ -39,14 +38,17 @@
       </div>
 
       <div class="contact-info" data-animated="0">
-        <h4>Контактная информация</h4>
+        <h4>Contact Info</h4>
         <ul>
           <li><i class="fa fa-home"></i> lorem ipsum street</li>
           <li><i class="fa fa-phone"></i> +399 (500) 321 9548</li>
           <li><i class="fa fa-envelope"></i> info@domain.com</li>
         </ul>
       </div>
-
+      <div class="flickr-widget" data-animated="0">
+        <h4>Flickr Gallery</h4>
+        <ul id="flickr" class="thumbs"></ul>
+      </div>
     </div>
   </div>
 </div>
