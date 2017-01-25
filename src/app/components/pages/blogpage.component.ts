@@ -1,98 +1,61 @@
 import { Component } from '@angular/core';
-//noinspection TypeScriptCheckImport
 import {Blog} from '../content/blog_content/Blog';
-//noinspection TypeScriptCheckImport
 import {BLOG} from '../content/blog_content/blog_content';
+import {BlogService} from '../service/blog.service'
+import {Coment} from "../content/blog_content/coment";
+import {FilterArrayPipe} from "../../filter.pipe";
 
-//noinspection TypeScriptValidateTypes
-/*
-const BLOG: Blog[]=[
-  {
-    image:'img/blog/1.jpg',
-    date:'18.aug.2016',
-    button:'read more',
-    header:'Improving and Removing Envato Market Image Watermarking',
-    n_comments:'16',
-    author:' premiumlayers',
-    content:'This is Photoshops version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor'
-  },
-  {
-    image:'img/blog/2.jpg',
-    date:'01.jan.2017',
-    button:'read more',
-    header:'Improving and Removing Envato Market Image Watermarking',
-    n_comments:'21',
-    author:' admin',
-    content:'This is Photoshops version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor'
-  },
-  {
-    image:'img/blog/4.jpg',
-    date:'06.jan.2017',
-    button:'read more',
-    header:'Improving and Removing Envato Market Image Watermarking',
-    n_comments:'9',
-    author:' admin',
-    content:'This is Photoshops version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor'
-  },
-  {
-    image:'img/blog/1.jpg',
-    date:'18.aug.2016',
-    button:'read more',
-    header:'Improving and Removing Envato Market Image Watermarking',
-    n_comments:'16',
-    author:' premiumlayers',
-    content:'This is Photoshops version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor'
-  },
-  {
-    image:'img/blog/2.jpg',
-    date:'01.jan.2017',
-    button:'read more',
-    header:'Improving and Removing Envato Market Image Watermarking',
-    n_comments:'21',
-    author:' admin',
-    content:'This is Photoshops version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor'
-  },
-  {
-    image:'img/blog/4.jpg',
-    date:'06.jan.2017',
-    button:'read more',
-    header:'Improving and Removing Envato Market Image Watermarking',
-    n_comments:'9',
-    author:' admin',
-    content:'This is Photoshops version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor'
-  },
-
-
-];
-*/
 
 
 @Component({
   selector: 'blogpage',
   templateUrl: './blogpage.component.html',
+  providers: [BlogService],
 
 })
 export class BlogpageComponent {
-  blogs=BLOG.slice(0,6);
-  blogs2=BLOG.slice(6,12);
 
-  showMe:string='i<2';
-  count: number=0;
-  increase() : number {
-    return this.count++;
-  }
 
-  s=3;
-  onSelect1(a) {
+ arrPage:number[]=[0,6,12,18,24,30.36,42,48,54,60,66,72,78,84,90];
 
-     if(a=='2'){
-       this.blogs=BLOG.slice(9,12);
-     }
-    if(a=='1'){
-      this.blogs=BLOG.slice(0,6);
+  constructor(private blogService: BlogService) { }
+  blogs: Blog[]=this.blogService.getBlogs();
+  blogs1: Blog[]=this.blogService.getBlogs();
+  countC:number=0;
+  headerShort:string;
+
+  onSelectPage(a) {
+
+    for(let i=0;i<this.arrPage.length;i++){
+      if(a==i+1){
+
+        this.blogs=this.blogService.getBlogs().slice(this.arrPage[i],this.arrPage[i+1]);
+      }
+
     }
-    if(a=='3'){
-      this.blogs=BLOG.slice(5,6);
-    }
+
   }
+  countComents() {
+    for (let i = 0; i < this.blogs.length; i++) {
+      let cc:number=0;
+      for (let j = 0; j < this.blogs[i].coment.length; j++) {
+        cc++;
+      }
+      this.blogs[i].ncoments=cc;
+      cc=0;
+    }
+
+  }
+   b=this.countComents();
+
+  cutHeader(){
+    for(let i=0;i<this.blogs1.length;i++){
+      let str=this.blogs1[i].content.slice(0,130);
+      this.blogs[i].content=str;
+    }
+
+    }
+ /* a=this.cutHeader();*/
+
+
 }

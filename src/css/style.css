@@ -1004,10 +1004,14 @@ text-align: center;
 	font-weight: bold;
 	color: #000;
 	margin: 15px 0;
-	letter-spacing: 2px;
-	line-height: 24px;
 }
 
+.blogh4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin: 15px 0;
+}
 #m-blog h4 a, #m-blog-content h4 a {
 	color: #000;
 }
@@ -1017,7 +1021,7 @@ text-align: center;
 }
 
 #m-blog .item {
-	margin: 0 15px;
+	margin: 0 0px;
 }
 
 #m-blog-content .item {
@@ -1135,11 +1139,30 @@ text-align: center;
 	font-weight: 300;
 	border: 1px solid #000;
 }
-
+.rmore p {
+  padding: 9px 18px;
+  background: #000;
+  display: table;
+  margin: 50% auto 0px;
+  font-family: Roboto;
+  font-size: 14px;
+  color: #FFF;
+   position: relative;
+  top: 15%;
+  left: 30%;
+  font-weight: 300;
+  border: 1px solid #000;
+  cursor: pointer;
+}
 .rmore a:hover {
 	background: transparent;
 	color: #000;
 	border-color: #000;
+}
+.rmore p:hover {
+  background: transparent;
+  color: #000;
+  border-color: #000;
 }
 
 #m-blog .item:hover .rmore {
@@ -1161,6 +1184,17 @@ text-align: center;
 	top: 0%;
 	left: 0%;
 }
+.blog_header{
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+
+}
+.blogh{
+width: 80%;
+height: 4vh;
+}
+
 
 /*-------------------------------------------------
                  10. Pricing Table
@@ -2826,6 +2860,14 @@ canvas {
 	color: #000;
 	display: table;
 }
+.page-nav ul li p {
+  width: 31px;
+  height: 33px;
+  border: 1px solid #d6d6d6;
+  transform: rotate(45deg);
+  color: #000;
+  display: table;
+}
 .page-nav ul li div {
   width: 31px;
   height: 33px;
@@ -2834,7 +2876,14 @@ canvas {
   color: #000;
   display: table;
 }
-
+.page-nav ul li div span {
+  transform: rotate(-45deg);
+  display: table;
+  padding: 5px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 300;
+}
 .page-nav ul li a span {
 	transform: rotate(-45deg);
 	display: table;
@@ -2843,13 +2892,43 @@ canvas {
 	margin: 0 auto;
 	font-weight: 300;
 }
+.page-nav ul li p span {
+  transform: rotate(-45deg);
+  display: table;
+  padding: 5px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+.page-nav ul li div span {
+  transform: rotate(-45deg);
+  display: table;
+  padding: 5px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 300;
+}
 
 .page-nav ul li a:hover, .page-nav ul li.active a {
 	border: 1px solid #555555;
 	color: #fff;
 	background: #555555;
+
+}
+.page-nav ul li p:hover, .page-nav ul li.active p {
+  border: 1px solid #555555;
+  color: #fff;
+  background: #555555;
+
 }
 
+.page-nav ul li div:hover, .page-nav ul li.active div {
+  border: 1px solid #555555;
+  color: #fff;
+  background: #555555;
+  cursor: pointer;
+}
 article h4 {
 	font-size: 20px !important;
 	margin: 20px 0 15px !important;
@@ -2956,7 +3035,7 @@ article p {
 
 .article-comment-form form input {
 	height: 60px;
-	border: 1px solid #eaeaea;
+	border: 1px solid #ff8c1a;
 	width: 100%;
 	padding: 15px 20px;
 	padding-left: 77px;
@@ -2966,13 +3045,14 @@ article p {
 
 .article-comment-form form span {
 	height: 60px;
-	border-right: 1px solid #eaeaea;
+	border-right: 1px solid #160a41;
 	width: 60px;
 	text-align: center;
 	display: table;
 	margin: 0px 0px -60px;
 	position: relative;
 	padding: 16px 14px 0;
+  background-color: #5c3486;
 }
 
 .article-comment-form form span i {
@@ -2988,7 +3068,7 @@ article p {
 
 .article-comment-form form textarea {
 	height: 130px;
-	border: 1px solid #eaeaea;
+	border: 1px solid #ff8c1a;
 	width: 100%;
 	padding: 12px 17px;
 	color: #555;
@@ -3001,17 +3081,17 @@ article p {
 	text-align: center;
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #fff;
+	color: #000;
 	border: 2px solid #000;
-	background: #000;
+	background: #ffad2a;
 	transition: 0.3s;
 	width: 100%;
 }
 
 .article-comment-form button:hover {
-	color: #000;
+	color: #ffffff;
 	border: 2px solid #000;
-	background: #fff;
+	background: #5c3486;
 	transition: 0.3s;
 }
 

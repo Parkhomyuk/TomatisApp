@@ -52,7 +52,7 @@ const appRoutes: Routes=[
     component:BlogpageComponent
   },
   {
-    path:'blogsingle',
+    path:'blogsingle/:id',
     component:BlogsingleComponent
   },
   {
