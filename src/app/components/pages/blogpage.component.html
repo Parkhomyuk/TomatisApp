@@ -18,7 +18,7 @@
 
              <!-- <div class="col-md-6 col-lg-6" data-animated="0" *ngFor="let blog of blogs let i=index |idpipe:25">-->
 
-            <div class="col-md-6 col-lg-6" data-animated="0" *ngFor="let blog of blogs let i=index">
+            <!--<div class="col-md-6 col-lg-6" data-animated="0" *ngFor="let blog of blogs let i=index">
                 <div class="item" *ngIf="i<6" >
 
                   <div class="mb-thumb">
@@ -37,7 +37,54 @@
                   <p class="blog_header" >{{blog.content}}</p>
 
                 </div>
+              </div>-->
+
+            <div class="col-md-6 col-lg-6" data-animated="0" *ngFor="let blog of bu let i=index">
+              <div class="item" *ngIf="i<6" >
+
+                <div class="mb-thumb">
+                  <div>
+                    <img  src='{{blog.image}}' class="img-responsive" alt="pictures"/>
+                  </div>
+                  <div class="date">{{blog.date| date :'longDate'}}</div>
+                  <span class="rmore"><p [routerLink]="['/blogsingle', blog.id]">{{blog.button}}</p></span>
+                </div>
+                <h4 class="blogh"><a [routerLink]="['/blogsingle', blog.id]">{{blog.header}}</a></h4>
+                <div class="blog-meta">
+                  <span><i class="fa fa-comments"></i>{{blog.ncomments}} comments</span>
+                  <span><i class="fa fa-user"></i> {{blog.author}}</span>
+                </div>
+
+                <p class="blog_header" >{{blog.content}}</p>
+
               </div>
+            </div>
+
+
+
+
+            <div class="col-md-6 col-lg-6" data-animated="0" *ngFor="let blog of blogs let i=index">
+              <div class="item" *ngIf="i<6" >
+
+                <div class="mb-thumb">
+                  <div>
+                    <img  src='{{blog.image}}' class="img-responsive" alt=""/>
+                  </div>
+                  <div class="date">{{blog.date}}</div>
+                  <span class="rmore"><p [routerLink]="['/blogsingle', blog.id]">read more</p></span>
+                </div>
+                <h4 class="blogh"><a [routerLink]="['/blogsingle', blog.id]">{{blog.header}}</a></h4>
+                <div class="blog-meta">
+                  <span><i class="fa fa-comments"></i>{{blog.ncoments}} comments</span>
+                  <span><i class="fa fa-user"></i> {{blog.author}}</span>
+                </div>
+
+                <p class="blog_header" >{{blog.content}}</p>
+
+              </div>
+            </div>
+
+
 
 
               <div class="page-nav" data-animated="0">
@@ -53,4 +100,12 @@
 
      </div>
       <!-- Blog Post Content -->
+
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.text}}
+  </li>
+</ul>
+
+
   <contact></contact>

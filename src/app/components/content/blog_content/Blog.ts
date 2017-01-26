@@ -2,7 +2,7 @@ import {Coment} from "./coment";
 export class Blog {
   id:number;
   image:string;
-  date:string;
+  date:number;
   button:string;
   header:string;
   ncoments:number;

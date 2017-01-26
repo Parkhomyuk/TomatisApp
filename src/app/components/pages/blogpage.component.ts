@@ -1,24 +1,47 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import {Blog} from '../content/blog_content/Blog';
 import {BLOG} from '../content/blog_content/blog_content';
 import {BlogService} from '../service/blog.service'
 import {Coment} from "../content/blog_content/coment";
 import {FilterArrayPipe} from "../../filter.pipe";
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import {FirebaseService} from "../service/firebase.service";
 
 
 
 @Component({
   selector: 'blogpage',
   templateUrl: './blogpage.component.html',
-  providers: [BlogService],
+  providers: [BlogService,FirebaseService],
 
 })
-export class BlogpageComponent {
+export class BlogpageComponent implements OnInit {
+  bu: Blog[];
+  constructor(private _firebaseService:FirebaseService) {
 
+  }
+  ngOnInit(){
+    this._firebaseService.getBu().subscribe(bu=>{
+      this.bu=bu;
+
+
+  });
+
+
+  }
+
+
+/*
 
  arrPage:number[]=[0,6,12,18,24,30.36,42,48,54,60,66,72,78,84,90];
+  items: FirebaseListObservable<any[]>;
+  constructor(private blogService: BlogService,af: AngularFire) {
+    this.items = af.database.list('/blog');
+  }
 
-  constructor(private blogService: BlogService) { }
+
+
+
   blogs: Blog[]=this.blogService.getBlogs();
   blogs1: Blog[]=this.blogService.getBlogs();
   countC:number=0;
@@ -55,7 +78,8 @@ export class BlogpageComponent {
     }
 
     }
- /* a=this.cutHeader();*/
 
+
+*/
 
 }

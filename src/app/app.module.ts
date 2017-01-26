@@ -22,7 +22,16 @@ import {Servicepage2Component} from "./components/pages/servicepage2.component";
 import {Servicepage3Component} from "./components/pages/servicepage3.component";
 import {Servicepage4Component} from "./components/pages/servicepage4.component";
 import {Servicepage5Component} from "./components/pages/servicepage5.component";
+import { AngularFireModule } from 'angularfire2';
 
+// Must export the config
+export const firebaseConfig = {
+  apiKey: 'AIzaSyDrj4XAfs-vBEiObvGZB4LM_PztZV445Jc',
+  authDomain: 'busness-bb9b3.firebaseapp.com',
+  databaseURL: 'https://busness-bb9b3.firebaseio.com',
+  storageBucket: 'busness-bb9b3.appspot.com',
+  messagingSenderId: '830086608321'
+};
 
 
 @NgModule({
@@ -34,6 +43,7 @@ import {Servicepage5Component} from "./components/pages/servicepage5.component";
     BrowserModule,
     FormsModule,
     HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     routing
   ],
   providers: [],
