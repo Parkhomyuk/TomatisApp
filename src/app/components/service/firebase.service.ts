@@ -31,6 +31,9 @@ getBu(){
     items.forEach(i=>i.forEach(e=>(console.log(e.name))));
   }
 
+  addPost(newPostBlog){
+    return  this.bu.push(newPostBlog);
+  }
 
 }
 

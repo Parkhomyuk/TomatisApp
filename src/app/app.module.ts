@@ -23,6 +23,7 @@ import {Servicepage3Component} from "./components/pages/servicepage3.component";
 import {Servicepage4Component} from "./components/pages/servicepage4.component";
 import {Servicepage5Component} from "./components/pages/servicepage5.component";
 import { AngularFireModule } from 'angularfire2';
+import {PostPageComponent} from "./components/pages/postpage.component";
 
 // Must export the config
 export const firebaseConfig = {
@@ -37,7 +38,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent, NavbarComponent, AboutComponent, ServiComponent, BlogComponent, ContactComponent, QuestionComponent, PostComponent, MainComponent, ServicepageComponent, BlogpageComponent,BlogsingleComponent,
-    ContactpageComponent, Servicepage2Component, Servicepage3Component, Servicepage4Component, Servicepage5Component
+    ContactpageComponent, Servicepage2Component, Servicepage3Component, Servicepage4Component, Servicepage5Component, PostPageComponent
   ],
   imports: [
     BrowserModule,

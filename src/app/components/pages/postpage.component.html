@@ -1,0 +1,105 @@
+<!-- Page Header -->
+<div class="row" data-animated="0">
+  <div class="col-md-12">
+    <div id="page-header">
+      <h3 ><span>Blog Post Page</span></h3>
+      <ul class="bread_crumbs">
+        <li><a href="/">home</a></li>
+        <li routerLink="/blogpage" style="cursor: pointer">blog</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Blog Post Content -->
+<!--
+<div class="row" data-animated="0">
+  <div class="col-md-12">
+    <form>
+              <div class="postpage ">
+
+                <span>Меня зовут <i class="fa fa-user"></i> админ</span>
+
+                <span>Сегодня <i class="fa fa-calendar"></i> 27 января 2017</span>
+              </div>
+              <div class=" postpage">
+                <span> Поле загрузки изображения <i class="fa fa-download"></i></span>  <input type="text" placeholder="укажите путь к изображению">
+                <span>Изображение <i class="fa fa-picture-o"></i><img src='{{image}}' class="img-responsive" alt=""/></span>
+              </div>
+              <div class=" ">
+              <h5>Заголовок</h5>
+              <i class="fa fa-header" aria-hidden="true"></i>
+              <input type="text" placeholder="Заголовок">
+            </div>
+            <div class="postpage">
+              <h5>Пост</h5>
+              <i class="fa fa-align-justify" aria-hidden="true"></i>
+            <textarea placeholder="Message"></textarea>
+            </div>
+
+  </form>
+  </div>
+            </div>
+-->
+<div class="container">
+<div class="row" data-animated="0">
+  <div class="col-md-12">
+    <div id="m-blog-post">
+      <div class="row">
+
+        <div class="blog-meta">
+
+          <span>Меня зовут <i class="fa fa-user"></i> админ</span>
+
+          <span>Сегодня <i class="fa fa-calendar"></i> {{date| date:'longDate'}}</span>
+        </div>
+
+        <div class="postpage" data-animated="0">
+
+          <h1>Пишем блог</h1>
+          <div class="blog-meta">
+
+
+
+            <span>     <i class="fa fa-picture-o"> </i>Изображение</span>
+          </div>
+          <form (submit)="addPost(image.value, header.value, content.value)">
+            <div class="row">
+
+              <div class="col-md-12">
+                <span><i class="fa fa-download"></i></span>
+                <input type="text" placeholder="укажите путь к изображению" #image>
+                <span><i class="fa fa-header"></i></span>
+                <input type="text" placeholder="Заголовок" #header>
+
+
+
+                <textarea placeholder="Текст" #content></textarea>
+
+
+
+                  <div class="row">
+
+                    <div class="col-md-3"><input type="text" placeholder="# hashtag"></div>
+                    <div class="col-md-3"><input type="text" placeholder="# hashtag"></div>
+                    <div class="col-md-3"><input type="text" placeholder="# hashtag"></div>
+                    <div class="col-md-3"><input type="text" placeholder="# hashtag"></div>
+                  </div>
+
+                <button type="submit">Post a Blog </button>
+
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

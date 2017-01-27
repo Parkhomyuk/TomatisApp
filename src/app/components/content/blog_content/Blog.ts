@@ -5,7 +5,7 @@ export class Blog {
   date:number;
   button:string;
   header:string;
-  ncoments:number;
+  ncomments:number;
   author:string;
   content:string;
   coment:Coment[];

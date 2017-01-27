@@ -67,7 +67,7 @@ export class BlogsingleComponent implements OnInit,OnDestroy{
       this.blogs.forEach(function(blog, i, blogs) {
         if(blog.id==f) {
           blog_single=blog;
-          console.log('Prizz '+f);
+
         }
 
       });
@@ -77,17 +77,18 @@ export class BlogsingleComponent implements OnInit,OnDestroy{
       this.image=blog_single.image;
       this.author=blog_single.author;
       this.content=blog_single.content;
-      this.ncoments=blog_single.ncoments;
+      this.ncoments=blog_single.ncomments;
       this.coments=blog_single.coment;
     });
     this.sub= this.activatedRoute.params.subscribe(params=>this.id=+params['id']);
-    console.log(this.id+"jjj");
+
 
 
 
   }
   ngOnDestroy():void {
     this.sub.unsubscribe();
+
   }
 
 

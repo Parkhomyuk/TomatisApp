@@ -12,6 +12,7 @@ import {Servicepage3Component} from "./components/pages/servicepage3.component";
 import {Servicepage4Component} from "./components/pages/servicepage4.component";
 import {Servicepage5Component} from "./components/pages/servicepage5.component";
 import {AboutComponent} from "./components/about/about.component";
+import {PostPageComponent} from "./components/pages/postpage.component";
 
 //noinspection TypeScriptValidateTypes
 const appRoutes: Routes=[
@@ -25,7 +26,7 @@ const appRoutes: Routes=[
   },
   {
     path:'post',
-    component:PostComponent
+    component:PostPageComponent
   },
   {
     path:'servicepage',
