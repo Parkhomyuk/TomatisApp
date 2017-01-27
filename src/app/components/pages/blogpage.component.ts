@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import {Blog} from '../content/blog_content/Blog';
-import {BLOG} from '../content/blog_content/blog_content';
-import {BlogService} from '../service/blog.service'
+
+
 import {Coment} from "../content/blog_content/coment";
 import {FilterArrayPipe} from "../../filter.pipe";
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
@@ -12,17 +12,24 @@ import {FirebaseService} from "../service/firebase.service";
 @Component({
   selector: 'blogpage',
   templateUrl: './blogpage.component.html',
-  providers: [BlogService,FirebaseService],
+  providers: [FirebaseService],
 
 })
 export class BlogpageComponent implements OnInit {
   bu: Blog[];
+  blogs1:Blog[];
+  blogs2:Blog[];
+
+
+  arrPage:number[]=[0,6,12,18,24,30.36,42,48,54,60,66,72,78,84,90];
   constructor(private _firebaseService:FirebaseService) {
 
   }
   ngOnInit(){
     this._firebaseService.getBu().subscribe(bu=>{
       this.bu=bu;
+      this.blogs1=bu;
+      this.blogs2=bu;
 
 
   });
@@ -30,6 +37,19 @@ export class BlogpageComponent implements OnInit {
 
   }
 
+  onSelectPage(a) {
+
+    for (let i = 0; i < this.arrPage.length; i++) {
+
+      if (a == i + 1) {
+
+        this.bu = this.blogs1.slice(this.arrPage[i], this.arrPage[i + 1]);
+      }
+
+
+    }
+
+  }
 
 /*
 

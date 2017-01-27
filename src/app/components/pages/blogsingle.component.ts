@@ -1,7 +1,7 @@
 import {Component, OnDestroy} from '@angular/core';
-import {BlogService} from '../service/blog.service'
+
 import {Blog} from '../content/blog_content/Blog';
-import {BLOG} from '../content/blog_content/blog_content';
+
 import { ActivatedRoute} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 import {OnInit} from "../../../../node_modules/@angular/core/src/metadata/lifecycle_hooks";
@@ -11,7 +11,7 @@ import {FirebaseService} from "../service/firebase.service";
 @Component({
   selector: 'blogsingle',
   templateUrl: './blogsingle.component.html',
-  providers: [BlogService, FirebaseService]
+  providers: [FirebaseService]
 })
 export class BlogsingleComponent implements OnInit,OnDestroy{
 

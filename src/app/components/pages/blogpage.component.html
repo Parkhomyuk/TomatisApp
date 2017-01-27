@@ -62,7 +62,7 @@
 
 
 
-
+<!--
             <div class="col-md-6 col-lg-6" data-animated="0" *ngFor="let blog of blogs let i=index">
               <div class="item" *ngIf="i<6" >
 
@@ -82,7 +82,7 @@
                 <p class="blog_header" >{{blog.content}}</p>
 
               </div>
-            </div>
+            </div>-->
 
 
 
@@ -90,7 +90,7 @@
               <div class="page-nav" data-animated="0">
 
                 <ul>
-                  <li *ngFor="let blog of blogs1 let i=index"   ><div *ngIf="i%6==0" (click)="onSelectPage(i/6+1)"><span >{{i/6+1}}</span></div></li>
+                  <li *ngFor="let blog of blogs2 let i=index"   ><div *ngIf="i%6==0" (click)="onSelectPage(i/6+1)"><span >{{i/6+1}}</span></div></li>
                 </ul>
 
               </div>
@@ -101,11 +101,15 @@
      </div>
       <!-- Blog Post Content -->
 
-<ul>
+<!--<ul>
   <li class="text" *ngFor="let item of items | async">
     {{item.text}}
   </li>
-</ul>
-
-
+</ul>-->
+<div class="container" style="text-align: center">
+  <form routerLink="/post">
+<button class="btn btn-warning" style="color:white; margin-bottom: 1vh">Add Post to Blog</button>
+  </form>
+</div>
   <contact></contact>
+

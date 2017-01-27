@@ -30,21 +30,22 @@ export class PostPageComponent implements OnInit{
     });
 
   }
-  addPost(image:string, header:string,  content:string){
+  addPost(image:string, header:string,  content:string, hashtag1:string,hashtag2:string,hashtag3:string, hashtag4:string){
 
     var newBlogPost={
       id:this.id,
       date:this.date,
-      image:image,
+      image:'img/serv/'+image,
       button:'прочитать',
       header:header,
       author:'alex',
       content:content,
+      hashtags:[hashtag1,hashtag2,hashtag3,hashtag4]
 
 
 
     }
-       
+
     this._firebaseService.addPost(newBlogPost);
     console.log(newBlogPost);
 

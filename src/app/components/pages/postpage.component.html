@@ -11,36 +11,32 @@
   </div>
 </div>
 
-<!-- Blog Post Content -->
-<!--
-<div class="row" data-animated="0">
-  <div class="col-md-12">
-    <form>
-              <div class="postpage ">
-
-                <span>Меня зовут <i class="fa fa-user"></i> админ</span>
-
-                <span>Сегодня <i class="fa fa-calendar"></i> 27 января 2017</span>
-              </div>
-              <div class=" postpage">
-                <span> Поле загрузки изображения <i class="fa fa-download"></i></span>  <input type="text" placeholder="укажите путь к изображению">
-                <span>Изображение <i class="fa fa-picture-o"></i><img src='{{image}}' class="img-responsive" alt=""/></span>
-              </div>
-              <div class=" ">
-              <h5>Заголовок</h5>
-              <i class="fa fa-header" aria-hidden="true"></i>
-              <input type="text" placeholder="Заголовок">
-            </div>
-            <div class="postpage">
-              <h5>Пост</h5>
-              <i class="fa fa-align-justify" aria-hidden="true"></i>
-            <textarea placeholder="Message"></textarea>
-            </div>
-
-  </form>
+<!--Modal window-->
+<div id="myModalBox" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Заголовок модального окна -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Заголовок модального окна</h4>
+      </div>
+      <!-- Основное содержимое модального окна -->
+      <div class="modal-body">
+        Содержимое модального окна...
+      </div>
+      <!-- Футер модального окна -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Сохранить изменения</button>
+      </div>
+    </div>
   </div>
-            </div>
--->
+</div>
+
+
+
+
+
 <div class="container">
 <div class="row" data-animated="0">
   <div class="col-md-12">
@@ -61,9 +57,9 @@
 
 
 
-            <span>     <i class="fa fa-picture-o"> </i>Изображение</span>
+
           </div>
-          <form (submit)="addPost(image.value, header.value, content.value)">
+          <form (submit)="addPost(image.value, header.value, content.value,hashtag1.value,hashtag2.value,hashtag3.value,hashtag4.value)">
             <div class="row">
 
               <div class="col-md-12">
@@ -80,19 +76,43 @@
 
                   <div class="row">
 
-                    <div class="col-md-3"><input type="text" placeholder="# hashtag"></div>
-                    <div class="col-md-3"><input type="text" placeholder="# hashtag"></div>
-                    <div class="col-md-3"><input type="text" placeholder="# hashtag"></div>
-                    <div class="col-md-3"><input type="text" placeholder="# hashtag"></div>
+                    <div class="col-md-3"><input type="text" placeholder="# hashtag" #hashtag1></div>
+                    <div class="col-md-3"><input type="text" placeholder="# hashtag" #hashtag2></div>
+                    <div class="col-md-3"><input type="text" placeholder="# hashtag" #hashtag3></div>
+                    <div class="col-md-3"><input type="text" placeholder="# hashtag" #hashtag4></div>
                   </div>
 
-                <button type="submit">Post a Blog </button>
+
+                <!--<a href="#myModal" class="btn btn-primary" data-toggle="modal">Открыть модальное окно</a>-->
+                <!-- HTML-код модального окна -->
+                <div id="myModal" class="modal fade">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Заголовок модального окна -->
+                      <div class="modal-header">
+
+
+                      </div>
+                      <!-- Основное содержимое модального окна -->
+                      <div class="modal-body">
+                       <h2 style="text-align: center"> The Post was succefully added in the Blog! </h2>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <button type="submit" href="#myModal" data-toggle="modal">Post a Blog </button>
 
               </div>
             </div>
           </form>
         </div>
-
 
 
         </div>

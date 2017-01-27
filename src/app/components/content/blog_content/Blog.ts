@@ -9,5 +9,6 @@ export class Blog {
   author:string;
   content:string;
   coment:Coment[];
+  hashtags:String[];
 }
 
