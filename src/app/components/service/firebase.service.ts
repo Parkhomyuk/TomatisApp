@@ -9,7 +9,7 @@ import {Blog} from "../content/blog_content/Blog";
 @Injectable()
 export class FirebaseService{
   bu: FirebaseListObservable<Blog[]>;
-  b: FirebaseListObservable<Blog>;
+  tags: FirebaseListObservable<String[]>;
   items: FirebaseListObservable<any[]>;
 
 
@@ -21,8 +21,14 @@ export class FirebaseService{
 
 getBu(){
   this.bu= this._af.database.list('/blog') as FirebaseListObservable<Blog[]>
+
   return this.bu;
 }
+  getTags(){
+
+    this.tags= this._af.database.list('/hashtag') as FirebaseListObservable<String[]>
+    return this.tags;
+  }
 
 
 
@@ -34,7 +40,9 @@ getBu(){
   addPost(newPostBlog){
     return  this.bu.push(newPostBlog);
   }
+  addTag(newHashTags){
+
 
 }
-
+}
 

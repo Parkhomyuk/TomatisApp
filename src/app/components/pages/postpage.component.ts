@@ -47,9 +47,8 @@ export class PostPageComponent implements OnInit{
     }
 
     this._firebaseService.addPost(newBlogPost);
+    this._firebaseService.addTag(newBlogPost.hashtags);
     console.log(newBlogPost);
-
-
 
   }
 

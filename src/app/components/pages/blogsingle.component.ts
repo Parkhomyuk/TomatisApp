@@ -27,6 +27,7 @@ export class BlogsingleComponent implements OnInit,OnDestroy{
   private content:string;
   private ncoments:number;
   private coments:Coment[];
+  private hashtags:String[];
   private sub:any;
 
 
@@ -79,6 +80,7 @@ export class BlogsingleComponent implements OnInit,OnDestroy{
       this.content=blog_single.content;
       this.ncoments=blog_single.ncomments;
       this.coments=blog_single.coment;
+      this.hashtags=blog_single.hashtags;
     });
     this.sub= this.activatedRoute.params.subscribe(params=>this.id=+params['id']);
 

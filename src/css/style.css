@@ -1196,6 +1196,21 @@ width: 80%;
 height: 4vh;
 }
 
+.line{
+  border: 0.5px solid #d58512;
+  margin-bottom: 2vh;
+
+
+}
+.hashtag > h5{
+ color: #d58512;
+}
+.hashtag i{
+  color: #d58512;
+}
+.hash p{
+  color: #d58512;
+}
 
 /*-------------------------------------------------
                  10. Pricing Table
