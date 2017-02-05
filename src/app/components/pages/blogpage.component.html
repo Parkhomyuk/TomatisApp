@@ -43,8 +43,8 @@
               <div class="item" *ngIf="i<6" >
 
                 <div class="mb-thumb">
-                  <div>
-                    <img  src='{{blog.image}}' class="img-responsive" alt="pictures"/>
+                  <div  >
+                    <img  src='{{blog.image}}' class="img-responsive" alt="pictures" style="height: 220px; width: auto"/>
                   </div>
                   <div class="date">{{blog.date| date :'longDate'}}</div>
                   <span class="rmore"><p [routerLink]="['/blogsingle', blog.id]">{{blog.button}}</p></span>
@@ -115,8 +115,9 @@
     {{item.text}}
   </li>
 </ul>-->
-<div class="container" style="text-align: center">
+<div class="container" style="text-align: center" *ngIf="email=='parkhomyukalex@gmail.com'" >
   <form routerLink="/post">
+
 <button class="btn btn-warning" style="color:white; margin-bottom: 1vh">Add Post to Blog</button>
   </form>
 </div>

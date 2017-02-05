@@ -1,0 +1,18 @@
+<div class="form-container sign">
+
+  <img src="../../../../img/signInOut/mnal.png" id="lock">
+
+
+
+
+
+
+  <div  id="c" class="error" *ngIf="error" style="text-align: center; color: red; "  > Sorry! But the given sign-in provider is disabled....</div>
+
+  <button (click)="loginFb()" id="fb">Login With Facebook</button><br>
+  <button (click)="loginGoogle()" id="google">Login With Google</button>
+  <button routerLink="/login-email" id="email">Email</button>
+  <router-outlet name="aux"></router-outlet>
+  <a routerLink='../signup' routerLinkActive="active" class="alc" style="color:black">No account? <strong>Create one here</strong></a>
+  <a [routerLink]="[{ outlets: { 'aux': ['signup'] } }]">Component Aux</a>
+</div>

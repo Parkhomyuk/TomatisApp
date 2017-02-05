@@ -1,0 +1,21 @@
+<div class="form-container">
+
+  <a href="javascript:history.back()" id="goback">Go back</a>
+
+  <h2 >Join now</h2>
+
+  <span class="error" *ngIf="error"  >{{ error }}</span>
+
+  <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+
+    <span><i class="fa fa-user"></i></span><input type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
+    <span><i class="fa fa-envelope-o"></i></span><input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt" required>
+
+
+    <button type="submit" [disabled]="!formData.valid" class="basic-btn">Create my account</button>
+  </form>
+</div>
+<!-- <span><i class="fa fa-user"></i></span>
+                   <input type="text" placeholder="Name">
+                   <span><i class="fa fa-envelope-o"></i></span>
+                   <input type="email" placeholder="e-mail">-->

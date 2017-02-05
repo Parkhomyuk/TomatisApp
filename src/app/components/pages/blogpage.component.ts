@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import {Blog} from '../content/blog_content/Blog';
 
-
+import { AuthProviders, AuthMethods } from 'angularfire2';
 import {Coment} from "../content/blog_content/coment";
 import {FilterArrayPipe} from "../../filter.pipe";
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
@@ -19,12 +19,25 @@ export class BlogpageComponent implements OnInit {
   bu: Blog[];
   blogs1:Blog[];
   blogs2:Blog[];
-
+  email: any;
 
   arrPage:number[]=[0,6,12,18,24,30.36,42,48,54,60,66,72,78,84,90];
-  constructor(private _firebaseService:FirebaseService) {
+  constructor(private _firebaseService:FirebaseService, public af: AngularFire) {
+    this.af.auth.subscribe(auth => {
+      if(auth) {
 
+        this.email=auth.auth.email;
+        console.log(auth.auth.email);
+
+
+      }
+    });
   }
+
+
+
+
+
   ngOnInit(){
     this._firebaseService.getBu().subscribe(bu=>{
       this.bu=bu;
@@ -50,6 +63,7 @@ export class BlogpageComponent implements OnInit {
     }
 
   }
+
 
 /*
 

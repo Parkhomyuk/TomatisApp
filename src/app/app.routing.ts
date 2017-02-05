@@ -13,6 +13,9 @@ import {Servicepage4Component} from "./components/pages/servicepage4.component";
 import {Servicepage5Component} from "./components/pages/servicepage5.component";
 import {AboutComponent} from "./components/about/about.component";
 import {PostPageComponent} from "./components/pages/postpage.component";
+import {LoginComponent} from "./components/signInOut/login/login.component";
+import {SignupComponent} from "./components/signInOut/signup/signup.component";
+
 
 //noinspection TypeScriptValidateTypes
 const appRoutes: Routes=[
@@ -54,7 +57,9 @@ const appRoutes: Routes=[
   },
   {
     path:'blogsingle/:id',
-    component:BlogsingleComponent
+    component:BlogsingleComponent,
+
+
   },
   {
     path:'contactpage',
@@ -63,7 +68,23 @@ const appRoutes: Routes=[
   {
     path:'about',
     component:AboutComponent
-  }
+  },
+  {
+    path:'login',
+    component:LoginComponent
+
+
+  },
+  {
+    path:'signup',
+    component: SignupComponent,
+    outlet:'aux'
+  },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+
+
+
+
 
 ];
 

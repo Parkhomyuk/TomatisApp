@@ -2,7 +2,8 @@
 <div class="row">
 
     <div class="col-md-12" id="m" data-animated="0">
-      <div><h1 style="padding: 4vh; background-color: #5c3486; color: white; text-align: center" >Нейрологопедия</h1></div>
+      <div><h1 style="padding: 4vh; background-color: #5c3486; color: white; text-align: center"  *ngIf="lang=='rus'">Нейрологопедия</h1></div>
+      <div  style="text-align:right"><h1 style="padding: 4vh; background-color: #5c3486; color: white; text-align:center" *ngIf="lang=='heb'" >נירופידבק</h1></div>
       <div class="row " *ngFor="let pa of pages">
         <div class="col-md-5">
 
@@ -12,14 +13,20 @@
 
         </div>
         <div class="col-md-7 do">
-          <h5 class="title">{{pa.title}}</h5>
-          <p>{{pa.name}}</p>
-          <p class="r-list">{{pa.paraqraph}}</p>
+          <h5 class="title" *ngIf="lang=='heb'" style="text-align: right">{{pa.title}}</h5>
+          <h5 class="title" *ngIf="lang=='rus'">{{pa.title}}</h5>
+          <p *ngIf="lang=='heb'" style="text-align: right">{{pa.name}}</p>
+          <p *ngIf="lang=='rus'">{{pa.name}}</p>
+          <p class="r-list" *ngIf="lang=='heb'" style="text-align: right">{{pa.paraqraph}}</p>
+          <p class="r-list" *ngIf="lang=='rus'">{{pa.paraqraph}}</p>
 
             <div class="list" *ngFor="let par of pa.paragraph2">{{par.list}}</div>
 
           <a routerLink="/contactpage"
-             class="btn-warning btn-center ">Консультация</a>
+             class="btn-warning btn-center " *ngIf="lang=='rus'">Консультация</a>
+          <a routerLink="/contactpage"
+             class="btn-warning btn-center" *ngIf="lang=='heb'">    הרשמה ליעוץ</a>
+
         </div>
 
     </div>

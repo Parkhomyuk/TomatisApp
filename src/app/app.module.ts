@@ -24,30 +24,39 @@ import {Servicepage4Component} from "./components/pages/servicepage4.component";
 import {Servicepage5Component} from "./components/pages/servicepage5.component";
 import { AngularFireModule } from 'angularfire2';
 import {PostPageComponent} from "./components/pages/postpage.component";
+import {LoginComponent} from "./components/signInOut/login/login.component";
+import {SignupComponent} from "./components/signInOut/signup/signup.component";
+import {BlogService} from "./components/service/blog.service";
+
+
 
 // Must export the config
 export const firebaseConfig = {
-  apiKey: 'AIzaSyDrj4XAfs-vBEiObvGZB4LM_PztZV445Jc',
-  authDomain: 'busness-bb9b3.firebaseapp.com',
-  databaseURL: 'https://busness-bb9b3.firebaseio.com',
-  storageBucket: 'busness-bb9b3.appspot.com',
-  messagingSenderId: '830086608321'
+  apiKey: "AIzaSyDrj4XAfs-vBEiObvGZB4LM_PztZV445Jc",
+  authDomain: "busness-bb9b3.firebaseapp.com",
+  databaseURL: "https://busness-bb9b3.firebaseio.com",
+  storageBucket: "busness-bb9b3.appspot.com",
+  messagingSenderId: "830086608321"
 };
 
+export const firebaseAuthConfig ={
+ /* provider:AuthProviders.Google,
+  method: AuthMethods.Popup*/
+};
 
 @NgModule({
   declarations: [
     AppComponent, NavbarComponent, AboutComponent, ServiComponent, BlogComponent, ContactComponent, QuestionComponent, PostComponent, MainComponent, ServicepageComponent, BlogpageComponent,BlogsingleComponent,
-    ContactpageComponent, Servicepage2Component, Servicepage3Component, Servicepage4Component, Servicepage5Component, PostPageComponent
+    ContactpageComponent, Servicepage2Component, Servicepage3Component, Servicepage4Component, Servicepage5Component, PostPageComponent,LoginComponent, SignupComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     routing
   ],
-  providers: [],
+  providers: [BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

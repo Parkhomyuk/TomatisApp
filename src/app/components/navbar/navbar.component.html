@@ -10,8 +10,9 @@
             </button>
 
             <a class="navbar-brand" href="./index.html">
-              <img src="img/logoTomatis.png" class="img-responsive" alt=""/>
               <p >Центр развития речи и <br>коррекции поведения</p>
+              <img src="img/logoTomatis.png" class="img-responsive" alt=""/>
+
             </a>
 
           </div>
@@ -36,8 +37,8 @@
               <li>
                 <a class="dd" data-hover="Язык&nbsp;&#9663;">Язык &#9662;</a>
                 <ul class="v-dd">
-                  <li><a id='heb' href="./a.html" data-hover="Hebrew&nbsp;"><img src="img/icons/hebrew.png" style="width: 3vw" ></a></li>
-                  <li><a id='rus' href="./a.html" data-hover="Russia&nbsp;"><img src="img/icons/russian.png" style="width: 3vw" ></a></li>
+                  <li><a id='heb'  (click)="choose('heb')" data-hover="Hebrew&nbsp;" style="cursor: pointer"><img src="img/icons/hebrew.png" style="width: 3vw" ></a></li>
+                  <li><a id='rus' (click)="choose('rus')" data-hover="Russia&nbsp;" style="cursor: pointer"><img src="img/icons/russian.png" style="width: 3vw" ></a></li>
                  </ul>
                </li>
             </ul>

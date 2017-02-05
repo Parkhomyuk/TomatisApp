@@ -4,149 +4,43 @@
     <div id="blog" data-animated="0" >
       <h3>Blog Posts</h3>
 
-      <div id="m-blog" class="owl-carousel owl-theme">
-        <div class="item">
-          <div class="mb-thumb">
-            <img src="img/blog/1.jpg" class="img-responsive" alt=""/>
-            <div class="date">18<span>aug</span></div>
-            <span class="rmore"><a href="#">read more</a></span>
-          </div>
-          <h4><a href="#">Improving and Removing Envato Market Image Watermarking</a></h4>
-          <div class="blog-meta">
-            <span><i class="fa fa-comments"></i> 2 comments</span>
-            <span><i class="fa fa-user"></i> premiumlayers</span>
-          </div>
-          <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor</p>
-        </div>
+      <!--<div id="m-blog" class="owl-carousel owl-theme" >-->
 
-        <div class="item">
-          <div class="mb-thumb">
-            <img src="img/blog/2.jpg" class="img-responsive" alt=""/>
-            <div class="date">06<span>aug</span></div>
-            <span class="rmore"><a href="#">read more</a></span>
-          </div>
-          <h4><a href="#">A More Balanced Envato MarketImportant Changes!</a></h4>
-          <div class="blog-meta">
-            <span><i class="fa fa-comments"></i> 4 comments</span>
-            <span><i class="fa fa-user"></i> admin</span>
-          </div>
-          <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor</p>
-        </div>
+      <div class="row">
+      <div class="col-md-4 col-lg-4" data-animated="0" *ngFor="let blog of blogs let i=index">
 
-        <div class="item">
-          <div class="mb-thumb">
-            <img src="img/blog/1.jpg" class="img-responsive" alt=""/>
-            <div class="date">18<span>aug</span></div>
-            <span class="rmore"><a href="#">read more</a></span>
-          </div>
-          <h4><a href="#">Improving and Removing Envato Market Image Watermarking</a></h4>
-          <div class="blog-meta">
-            <span><i class="fa fa-comments"></i> 2 comments</span>
-            <span><i class="fa fa-user"></i> premiumlayers</span>
-          </div>
-          <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor</p>
-        </div>
 
-        <div class="item">
-          <div class="mb-thumb">
-            <img src="img/blog/2.jpg" class="img-responsive" alt=""/>
-            <div class="date">06<span>aug</span></div>
-            <span class="rmore"><a href="#">read more</a></span>
-          </div>
-          <h4><a href="#">A More Balanced Envato MarketImportant Changes!</a></h4>
-          <div class="blog-meta">
-            <span><i class="fa fa-comments"></i> 4 comments</span>
-            <span><i class="fa fa-user"></i> admin</span>
-          </div>
-          <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor</p>
-        </div>
+          <div class="item" *ngIf="i>(blogs.length-4)" >
 
-        <div class="item">
-          <div class="mb-thumb">
-            <img src="img/blog/1.jpg" class="img-responsive" alt=""/>
-            <div class="date">18<span>aug</span></div>
-            <span class="rmore"><a href="#">read more</a></span>
-          </div>
-          <h4><a href="#">Improving and Removing Envato Market Image Watermarking</a></h4>
-          <div class="blog-meta">
-            <span><i class="fa fa-comments"></i> 2 comments</span>
-            <span><i class="fa fa-user"></i> premiumlayers</span>
-          </div>
-          <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor</p>
-        </div>
+            <div class="mb-thumb">
+              <div>
+                <img  src='{{blog.image}}' class="img-responsive" alt="pictures" style="height: 220px; width: auto"/>
+              </div>
+              <div class="date">{{blog.date| date :'longDate'}}</div>
+              <span class="rmore"><p [routerLink]="['/blogsingle', blog.id]">{{blog.button}}</p></span>
+            </div>
+            <h4 class="blogh"><a [routerLink]="['/blogsingle', blog.id]">{{blog.header}}</a></h4>
+            <div class="blog-meta">
+              <span><i class="fa fa-comments"></i>{{blog.ncomments}} comments</span>
+              <span><i class="fa fa-user"></i> {{blog.author}}</span>
+            </div>
 
-        <div class="item">
-          <div class="mb-thumb">
-            <img src="img/blog/2.jpg" class="img-responsive" alt=""/>
-            <div class="date">06<span>aug</span></div>
-            <span class="rmore"><a href="#">read more</a></span>
-          </div>
-          <h4><a href="#">A More Balanced Envato MarketImportant Changes!</a></h4>
-          <div class="blog-meta">
-            <span><i class="fa fa-comments"></i> 4 comments</span>
-            <span><i class="fa fa-user"></i> admin</span>
-          </div>
-          <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor</p>
-        </div>
+            <p class="blog_header" >{{blog.content}}</p>
+            <div class="container hashtag">
+              <h5><i class="fa fa-slack" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;hashtags</h5>
+              <div class="row">
 
-        <div class="item">
-          <div class="mb-thumb">
-            <img src="img/blog/1.jpg" class="img-responsive" alt=""/>
-            <div class="date">18<span>aug</span></div>
-            <span class="rmore"><a href="#">read more</a></span>
+                <div class="col-md-3 hash" *ngFor="let hash of blog.hashtags">
+                  <p style="color:#d58512 ">{{hash}}</p>
+                </div>
+              </div>
+              <div class="line"></div>
+            </div>
           </div>
-          <h4><a href="#">Improving and Removing Envato Market Image Watermarking</a></h4>
-          <div class="blog-meta">
-            <span><i class="fa fa-comments"></i> 2 comments</span>
-            <span><i class="fa fa-user"></i> premiumlayers</span>
           </div>
-          <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor</p>
         </div>
-
-        <div class="item">
-          <div class="mb-thumb">
-            <img src="img/blog/2.jpg" class="img-responsive" alt=""/>
-            <div class="date">06<span>aug</span></div>
-            <span class="rmore"><a href="#">read more</a></span>
-          </div>
-          <h4><a href="#">A More Balanced Envato MarketImportant Changes!</a></h4>
-          <div class="blog-meta">
-            <span><i class="fa fa-comments"></i> 4 comments</span>
-            <span><i class="fa fa-user"></i> admin</span>
-          </div>
-          <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor</p>
-        </div>
-
-        <div class="item">
-          <div class="mb-thumb">
-            <img src="img/blog/1.jpg" class="img-responsive" alt=""/>
-            <div class="date">18<span>aug</span></div>
-            <span class="rmore"><a href="#">read more</a></span>
-          </div>
-          <h4><a href="#">Improving and Removing Envato Market Image Watermarking</a></h4>
-          <div class="blog-meta">
-            <span><i class="fa fa-comments"></i> 2 comments</span>
-            <span><i class="fa fa-user"></i> premiumlayers</span>
-          </div>
-          <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor</p>
-        </div>
-
-        <div class="item">
-          <div class="mb-thumb">
-            <img src="img/blog/2.jpg" class="img-responsive" alt=""/>
-            <div class="date">06<span>aug</span></div>
-            <span class="rmore"><a href="#">read more</a></span>
-          </div>
-          <h4><a href="#">A More Balanced Envato MarketImportant Changes!</a></h4>
-          <div class="blog-meta">
-            <span><i class="fa fa-comments"></i> 4 comments</span>
-            <span><i class="fa fa-user"></i> admin</span>
-          </div>
-          <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor</p>
-        </div>
-
       </div>
     </div>
   </div>
-</div>
+
 

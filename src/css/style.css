@@ -127,8 +127,8 @@ header.relative {
 
 .navbar-brand img {
 	display: table;
-  margin: 24px auto;
-  margin-top: 0;
+  margin: auto;
+  margin-top: 5px;
   margin-bottom: 0;
 }
 
@@ -3083,7 +3083,7 @@ article p {
 }
 
 .article-comment-form form textarea {
-	height: 130px;
+	height: 230px;
 	border: 1px solid #ff8c1a;
 	width: 100%;
 	padding: 12px 17px;

@@ -1,0 +1,52 @@
+#lock {
+  width:20%;
+  margin: 0.5em auto 1em auto;
+  display:block;
+}
+
+#fb {
+  background:#3B5998 url('../../../../img/signInOut/F_icon.svg.png') no-repeat 12px;
+  background-size: 25px;
+  color:#fff;
+}
+
+#google {
+  border: 1px solid #95989A;
+  background: #fff  url('../../../../img/signInOut/Icon_Google+.svg%20(1).png') no-repeat 25px;
+  background-size: 25px;
+}
+
+#email {
+  background: #ECECEC  url('../../../../img/signInOut/Mail-closed.svg.png') no-repeat 25px;
+  background-size: 25px;
+}
+
+.sign{
+/* border: 1px solid #ff8c1a;*/
+
+}
+.sign > button{
+  border: 1px solid black;
+}
+
+
+@media (max-width: 600px) {
+  #page {
+    padding:1em;
+  }
+  #toolbar {
+    width:90%;
+    margin-left: -45%;
+  }
+  #fb {
+    background:#3B5998;
+  }
+
+  #google {
+    background: #fff;
+  }
+
+  #email {
+    background: #ECECEC;
+  }
+}

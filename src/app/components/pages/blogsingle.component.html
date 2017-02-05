@@ -25,7 +25,7 @@
             <h4>{{header}}</h4>
 
             <div class="blog-meta">
-              <span><i class="fa fa-comments"></i> {{ncoments}} comments</span>
+              <span><i class="fa fa-comments"></i> {{ncomments}} comments</span>
               <span><i class="fa fa-user"></i> {{author}}</span>
             </div>
             <p>{{content}}</p>
@@ -61,15 +61,97 @@
               <form>
                 <div class="row">
                   <div class="col-md-6">
-                    <span><i class="fa fa-user"></i></span>
-                    <input type="text" placeholder="Name">
-                    <span><i class="fa fa-envelope-o"></i></span>
-                    <input type="email" placeholder="e-mail">
+
+<!--
+                    &lt;!&ndash; <span><i class="fa fa-user"></i></span>
+                <input type="text" placeholder="Name">
+                <span><i class="fa fa-envelope-o"></i></span>
+                <input type="email" placeholder="e-mail">&ndash;&gt;
+                    <div class="form-container sign" id="sign" style="border: 0px">
+
+                      <img src="../../../../img/signInOut/mnal.png" id="lock">
+
+                      <div  id="c" class="error" *ngIf="error" style="text-align: center; color: red; "  > Sorry! But the given sign-in provider is disabled....</div>
+
+                      <button (click)="loginFb()" id="fb">Login With Facebook</button><br>
+                      <button (click)="loginGoogle()" id="google">Login With Google</button>
+                      <button (click)="onregEmail()" id="email">Email</button>
+                      <router-outlet name="aux"></router-outlet>
+
+                      <a (click)="signup()" style="color:black">No account? <strong>Create one here</strong></a>
+
+                    </div>
+                    <div class="form-container" id="signup" hidden>
+
+
+                      <i class="fa fa-arrow-circle-left" aria-hidden="true"><a (click)="goback()" id="goback" >Go back</a></i>
+                      <div class="row join" >
+
+                      <h2 >Join now</h2>
+
+                      <div>
+                      <div class="error" *ngIf="error"  >{{ error }}</div>
+                      </div>
+                      </div>
+                      <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+
+                        <span><i class="fa fa-envelope-o"></i></span><input type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
+                        <span><i class="fa fa-key" ></i></span><input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt" required>
+
+
+                        <button type="submit" [disabled]="!formData.valid" class="basic-btn">Create my account</button>
+                      </form>
+                   </div>
+
+                          <div id="member" hidden>
+                            <button (click)="logout()" class="basic-btn">Logout</button>
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            <h5>{{ name }}</h5>
+                          </div>
+-->
+
+                    <h1 style="margin-top: 0px">Current user:</h1>
+                    <h3>{{name}}</h3>
+                    <h5>{{email}}</h5>
+                    <dir>
+                    <img *ngIf="photo!=null" src='{{photo}}' alt="" style="width: 128px;height: 128px; border-radius: 100px;border: 3px solid orange;box-shadow: 0 0 7px #666;">
+                    <img *ngIf="photo==null" src='../../../img/icons/anonim.png' alt="" >
+                    </dir>
+
+                    <a *ngIf="name!=null" (click)="logout()" style="cursor: pointer">LogOut</a>
+                    <div class="form-container" id="regEmail" *ngIf="name==null">
+
+                      <h2>Custom Login</h2>
+
+                      <p class="error" *ngIf="error">{{ error }}</p>
+
+                      <form #formData='ngForm' (ngSubmit)="onEmail(formData)">
+
+                        <input type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
+                        <input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt" required>
+
+                        <button type="submit" [disabled]="!formData.valid" class="basic-btn">Log in</button>
+                        <div style="text-align: center">
+                          <p>- or -</p>
+                        </div>
+                        <button (click)="loginFb()" id="fb">Login With Facebook</button><br>
+                        <button (click)="loginGoogle()" id="google">Login With Google</button>
+                        <a class="alc">Don't have an account?</a>
+                      </form>
+                    </div>
+
+
 
                   </div>
                   <div class="col-md-6">
-                    <textarea placeholder="Message"></textarea>
-                    <button type="submit">Post a Comment</button>
+                    <textarea *ngIf='name!=null' placeholder="Message" id="message"></textarea>
+                    <button *ngIf='name!=null' type="submit" id="butMes" >Post a Comment</button>
+                    <textarea *ngIf='name==null' placeholder="You need sign in or sign up" disabled style="background-color: black; opacity: 0.3" ></textarea>
+                    <button *ngIf='name==null' type="submit" disabled style="background-color: black; opacity: 0.3; color: white">Post a Comment</button>
+
+
+
+
                   </div>
                 </div>
               </form>
