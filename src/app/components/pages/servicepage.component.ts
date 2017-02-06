@@ -61,7 +61,7 @@ export class ServicepageComponent implements OnInit,OnChanges{
     console.log(' Component views have been checked');
   }
   ngOnDestroy():void {
-     
+
 
   }
 

@@ -19,8 +19,8 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right menu-effect">
               <li class="current"><a href="./index.html" data-hover="Главная">Главная</a></li>
-              <li class="current"><a  routerLink="/about" data-hover="О&nbsp;Нас&nbsp">О Нас</a>
-              <li>
+              <li class="current"><a  routerLink="/about" data-hover="О&nbsp;Нас&nbsp" *ngIf="lang=='rus'">О Нас</a><li>
+              <li class="current"><a  routerLink="/about" style="font-size: 3vh" data-hover="עלינו"  *ngIf="lang=='heb'">עלינו</a><li>
                 <a class="dropdown" data-hover="Услуги&nbsp;&#9663;">Услуги &#9662;</a>
                 <ul class="v-dropdown">
                   <li><a routerLink="/servicepage" data-hover="Нейрологопедия&nbsp;">Нейрологопедия</a></li>

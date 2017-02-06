@@ -1,26 +1,22 @@
-import { Component } from '@angular/core';
+
 //noinspection TypeScriptCheckImport
-import {SERVICEPAGE2} from "../content/service_page_p2";
-import {SERVICEPAGE2HEB} from "../content/service_page_p2HEB";
-import {BlogService} from "../service/blog.service";
-import {SimpleChanges} from "../../../../node_modules/@angular/core/src/metadata/lifecycle_hooks";
-
-
+import {ServicePage2} from "../pages/servicepage2.component";
 //noinspection TypeScriptValidateTypes
-/*
-let SERVICEPAGE2: ServicePage2[] = [
+
+export const SERVICEPAGE2HEB: ServicePage2[] = [
   { "id": 21,
     pictures:"img/serv/service21.jpg",
-    "title":"Задержка речевого развития",
+    "title":"עיכוב שפתי",
     "paraqraph":"",
     paragraph2:[
-      {list:'"Стимуляция  коры головного мозга позволяет создать УСЛОВИЯ ФОРМИРОВАНИЯ РЕЧИ."'},
-      {list:'"Улучшается фонематический слух"'},
-      {list:'"Улучшается звукопроизношение"'},
-      {list:'"Речь становится более экспрессивной"'},
-      {list:'"Развитие речи благотворно влияет на стремление к общению с другими людьми"'},
-      {list:'"Ребенок перестают путать местами буквы (слоги)"'},
-      {list:'"Речь становится более  плавной и членораздельной"'},
+      {list:'"גירוי קליפת המוח מאפשר  היווצרות של דיבור"'},
+      {list:'"משפר שמיעה פונמיים"'},
+      {list:'"מפשר את היכולת להשמיע קולות"'},
+      {list:'"מגדיל את אוצר המילים"'},
+      {list:'"הדיבור הופך להיות יותר אקספרסיבי"'},
+      {list:'"התפתחות הדיבור , משפיע לטובה על הרצון לתקשר עם אחרים"'},
+      {list:'"הילד מפסיק לבלבל את מיקום האותיות ( הברות )"'},
+      {list:'"הדיבור הופך להיות רהוט חלק יותר"'}
     ]
 
 
@@ -118,53 +114,3 @@ let SERVICEPAGE2: ServicePage2[] = [
 
 
 ];
-*/
-
-class ServicePage2{
-  id: number;
-  title:string;
-  pictures:string;
-  paraqraph:string;
-  paragraph2:Paragraph2[];
-}
-class Paragraph2{
-  list: string;
-}
-
-@Component({
-  selector: 'servicepage2',
-  templateUrl: './servicepage2.component.html',
-
-})
-export class Servicepage2Component {
-    id:number;
-    pages=SERVICEPAGE2;
-
-  lang:any
-  constructor(private blogservise:BlogService){
-
-  }
-
-  ngOnInit():void {
-    this.lang=this.blogservise.getLang();
-    console.log(this.lang);
-    if(this.lang=='heb'){
-      this.pages=SERVICEPAGE2HEB;
-    }else{
-      this.pages=SERVICEPAGE2;
-    }
-
-  }
-  ngOnChanges(changes:SimpleChanges):void {
-    this.lang;
-
-  }
-
-  ngDoCheck(){
-    this.lang;
-    this.pages;
-    this.ngOnInit();
-    console.log('checkinggggg');
-  }
-
-}

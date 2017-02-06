@@ -1,14 +1,9 @@
-import { Component } from '@angular/core';
+
 //noinspection TypeScriptCheckImport
-import {SERVICEPAGE2} from "../content/service_page_p2";
-import {SERVICEPAGE2HEB} from "../content/service_page_p2HEB";
-import {BlogService} from "../service/blog.service";
-import {SimpleChanges} from "../../../../node_modules/@angular/core/src/metadata/lifecycle_hooks";
-
-
+import {ServicePage2} from "../pages/servicepage2.component";
 //noinspection TypeScriptValidateTypes
-/*
-let SERVICEPAGE2: ServicePage2[] = [
+
+export const SERVICEPAGE2: ServicePage2[] = [
   { "id": 21,
     pictures:"img/serv/service21.jpg",
     "title":"Задержка речевого развития",
@@ -118,53 +113,3 @@ let SERVICEPAGE2: ServicePage2[] = [
 
 
 ];
-*/
-
-class ServicePage2{
-  id: number;
-  title:string;
-  pictures:string;
-  paraqraph:string;
-  paragraph2:Paragraph2[];
-}
-class Paragraph2{
-  list: string;
-}
-
-@Component({
-  selector: 'servicepage2',
-  templateUrl: './servicepage2.component.html',
-
-})
-export class Servicepage2Component {
-    id:number;
-    pages=SERVICEPAGE2;
-
-  lang:any
-  constructor(private blogservise:BlogService){
-
-  }
-
-  ngOnInit():void {
-    this.lang=this.blogservise.getLang();
-    console.log(this.lang);
-    if(this.lang=='heb'){
-      this.pages=SERVICEPAGE2HEB;
-    }else{
-      this.pages=SERVICEPAGE2;
-    }
-
-  }
-  ngOnChanges(changes:SimpleChanges):void {
-    this.lang;
-
-  }
-
-  ngDoCheck(){
-    this.lang;
-    this.pages;
-    this.ngOnInit();
-    console.log('checkinggggg');
-  }
-
-}

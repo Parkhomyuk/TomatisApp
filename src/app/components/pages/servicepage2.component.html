@@ -14,14 +14,21 @@
 
         </div>
         <div class="col-md-7 do">
-          <h5 class="title">{{pa.title}}</h5>
-          <p>{{pa.name}}</p>
-          <p class="r-list">{{pa.paraqraph}}</p>
+          <h5 class="title" *ngIf="lang=='heb'" style="text-align: right">{{pa.title}}</h5>
+          <h5 class="title" *ngIf="lang=='rus'">{{pa.title}}</h5>
+          <p  *ngIf="lang=='heb'" style="text-align: right">{{pa.name}}</p>
+          <p *ngIf="lang=='rus'">{{pa.name}}</p>
+          <p class="r-list"  *ngIf="lang=='heb'" style="text-align: right">{{pa.paraqraph}}</p>
+          <p class="r-list" *ngIf="lang=='rus'">{{pa.paraqraph}}</p>
             <ul>
-            <li class="list1" *ngFor="let par of pa.paragraph2">{{par.list}}</li>
+            <li class="list1" *ngFor="let par of pa.paragraph2">
+              {{par.list}}
+            </li>
             </ul>
           <a routerLink="/contactpage"
-             class="btn-warning btn-center">Консультация</a>
+             class="btn-warning btn-center " *ngIf="lang=='rus'">Консультация</a>
+          <a routerLink="/contactpage"
+             class="btn-warning btn-center" *ngIf="lang=='heb'">    הרשמה ליעוץ</a>
         </div>
 
     </div>
