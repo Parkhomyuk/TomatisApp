@@ -69,7 +69,13 @@ export class BlogsingleComponent implements OnInit,OnDestroy{
         console.log(auth);
         console.log(auth.auth.email);
         this.email=auth.auth.email;
+        if(auth.auth.displayName){
         this.name=auth.auth.displayName;
+        }
+        if(!auth.auth.displayName){
+          this.name=auth.auth.email;
+        }
+
         this.photo=auth.auth.photoURL;
 
 
@@ -88,8 +94,8 @@ export class BlogsingleComponent implements OnInit,OnDestroy{
         (success) => {
           console.log(success);
 
-            let a=document.getElementById('signup').hidden=true;
-            let b=document.getElementById('sign').hidden=true;
+            let a=document.getElementById('create_ac').hidden=true;
+
             this.name=success.auth.email;
              this.photo=null;
 
@@ -102,16 +108,19 @@ export class BlogsingleComponent implements OnInit,OnDestroy{
         })
     }
   }
-  logout() {
+  logout( ) {
+
     this.af.auth.logout();
     this.name="You are not registered member";
     console.log('logged out');
+
+    /*let b= document.getElementById('sign').hidden=false;*/
 
   }
 
   onEmail(formData) {
     if(formData.valid) {
-      console.log(formData.value);
+      //console.log(formData.value);
       this.af.auth.login({
           email: formData.value.email,
           password: formData.value.password
@@ -121,20 +130,32 @@ export class BlogsingleComponent implements OnInit,OnDestroy{
           method: AuthMethods.Password,
         }).then(
         (success) => {
-          console.log(success);
-
+          this.name=success.auth.email;
+          this.photo=success.auth.photoURL;
+          let a=document.getElementById('regEmail').hidden=true;
+          console.log(formData.value+" success");
         }).catch(
         (err) => {
           console.log(err);
           this.error = err;
         })
     }
+    let a=document.getElementById('regEmail').hidden=true;
   }
 
   onregEmail(){
     let a=document.getElementById('regEmail').hidden=false;
     let b=document.getElementById('sign').hidden=true;
 
+  }
+  onCreateLog(){
+    let a=document.getElementById('create_ac').hidden=false;
+    let b=document.getElementById('regEmail').hidden=true;
+
+  }
+  gobackLog(){
+    let a=document.getElementById('create_ac').hidden=true;
+    let b=document.getElementById('regEmail').hidden=false;
   }
   loginFb() {
     this.af.auth.login({

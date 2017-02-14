@@ -77,8 +77,8 @@ const appRoutes: Routes=[
   },
   {
     path:'signup',
-    component: SignupComponent,
-    outlet:'aux'
+    component: SignupComponent
+
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 
