@@ -27,6 +27,7 @@ import {PostPageComponent} from "./components/pages/postpage.component";
 import {LoginComponent} from "./components/signInOut/login/login.component";
 import {SignupComponent} from "./components/signInOut/signup/signup.component";
 import {BlogService} from "./components/service/blog.service";
+import {CommentDatePipe} from "./pipes/date.pipe";
 
 
 
@@ -47,7 +48,7 @@ export const firebaseAuthConfig ={
 @NgModule({
   declarations: [
     AppComponent, NavbarComponent, AboutComponent, ServiComponent, BlogComponent, ContactComponent, QuestionComponent, PostComponent, MainComponent, ServicepageComponent, BlogpageComponent,BlogsingleComponent,
-    ContactpageComponent, Servicepage2Component, Servicepage3Component, Servicepage4Component, Servicepage5Component, PostPageComponent,LoginComponent, SignupComponent
+    ContactpageComponent, Servicepage2Component, Servicepage3Component, Servicepage4Component, Servicepage5Component, PostPageComponent,LoginComponent, SignupComponent,CommentDatePipe
   ],
   imports: [
     BrowserModule,

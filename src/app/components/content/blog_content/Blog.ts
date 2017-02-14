@@ -1,4 +1,6 @@
 import {Coment} from "./coment";
+import {HashTags} from "./HashTags";
+
 export class Blog {
   id:number;
   image:string;
@@ -8,7 +10,11 @@ export class Blog {
   ncomments:number;
   author:string;
   content:string;
-  coment:Coment[];
-  hashtags:String[];
+  comments:Coment[];
+   hashtags:string[];
+  hashtags1:string;
+  hashtags2:string;
+  hashtags3:string;
+  hashtags4:string;
 }
 

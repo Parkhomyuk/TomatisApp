@@ -52,11 +52,41 @@
 
         <div class="postpage" data-animated="0">
 
-          <h1>Пишем блог</h1>
+
           <div class="blog-meta">
+            <div class="container">
+
+              <div class="well well-sm text-center">
+
+                <h1>Пишем блог</h1>
+
+                <div class="btn-group" data-toggle="buttons">
 
 
 
+                  <label class="btn btn-default active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" chacked>
+                    <span class="glyphicon glyphicon-ok">_Heb</span>
+                  </label>
+
+                  <label class="btn btn-warning">
+                    <input type="radio" name="options" id="option2" autocomplete="off">
+                    <span class="glyphicon glyphicon-ok">_Rus</span>
+                  </label>
+
+
+
+                </div>
+
+
+              </div>
+
+            </div>
+
+            <form action="handler.php">
+
+
+            </form>
 
           </div>
           <form (submit)="addPost(image.value, header.value, content.value,hashtag1.value,hashtag2.value,hashtag3.value,hashtag4.value)">

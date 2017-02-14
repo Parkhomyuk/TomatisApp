@@ -2,7 +2,8 @@
 <div class="row">
 
     <div class="col-md-12" id="m" data-animated="0">
-      <div><h1 style="padding: 4vh; background-color: #5c3486; color: white; text-align: center" >TOMATIS для детей</h1></div>
+      <div><h1 style="padding: 4vh; background-color: #5c3486; color: white; text-align: center" *ngIf="lang=='rus'" >TOMATIS для детей</h1></div>
+      <div><h1 style="padding: 4vh; background-color: #5c3486; color: white; text-align: center" *ngIf="lang=='heb'" >TOMATIS לילדים </h1></div>
       <img src="./img/serv/childservice.jpg" style="width: 100%">
 
       <div class="row " *ngFor="let pa of pages">
@@ -21,9 +22,16 @@
           <p class="r-list"  *ngIf="lang=='heb'" style="text-align: right">{{pa.paraqraph}}</p>
           <p class="r-list" *ngIf="lang=='rus'">{{pa.paraqraph}}</p>
             <ul>
-            <li class="list1" *ngFor="let par of pa.paragraph2">
+              <div *ngIf="lang=='rus'">
+            <li  class="list1" *ngFor="let par of pa.paragraph2">
               {{par.list}}
             </li>
+              </div>
+              <div *ngIf="lang=='heb'">
+              <li  type="none" style="text-align: right" class="list1" *ngFor="let par of pa.paragraph2">
+                {{par.list}}&nbsp;&nbsp;&nbsp;&#8226;
+              </li>
+              </div>
             </ul>
           <a routerLink="/contactpage"
              class="btn-warning btn-center " *ngIf="lang=='rus'">Консультация</a>

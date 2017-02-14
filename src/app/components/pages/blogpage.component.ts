@@ -6,6 +6,9 @@ import {Coment} from "../content/blog_content/coment";
 import {FilterArrayPipe} from "../../filter.pipe";
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import {FirebaseService} from "../service/firebase.service";
+import {OnChanges} from "../../../../node_modules/@angular/core/src/metadata/lifecycle_hooks";
+import {OnDestroy} from "../../../../node_modules/@angular/core/src/metadata/lifecycle_hooks";
+import {SimpleChanges} from "../../../../node_modules/@angular/core/src/metadata/lifecycle_hooks";
 
 
 
@@ -15,11 +18,15 @@ import {FirebaseService} from "../service/firebase.service";
   providers: [FirebaseService],
 
 })
-export class BlogpageComponent implements OnInit {
+export class BlogpageComponent implements OnInit,OnChanges, OnDestroy {
+
   bu: Blog[];
   blogs1:Blog[];
   blogs2:Blog[];
+ flag:any=null;
+  tags:any;
   email: any;
+  filter:any;
 
   arrPage:number[]=[0,6,12,18,24,30.36,42,48,54,60,66,72,78,84,90];
   constructor(private _firebaseService:FirebaseService, public af: AngularFire) {
@@ -46,6 +53,9 @@ export class BlogpageComponent implements OnInit {
 
 
   });
+    this._firebaseService.getTags().subscribe(tags=> {
+      this.tags = tags;
+    });
 
 
   }
@@ -61,6 +71,53 @@ export class BlogpageComponent implements OnInit {
 
 
     }
+
+  }
+
+  filterTag(tag){
+    /*this._firebaseService.getTags().subscribe(tags => {
+      this.tags = tags;
+    });*/
+    this.filter=tag;
+    console.log(this.filter+"==filter");
+    console.log(tag+"==filter");
+  }
+  hashtagFilter(tag){
+
+     this.flag=tag;
+
+    /*this._firebaseService.getBlogTag().subscribe(bu => {
+      this.bu = bu;
+    });*/
+console.log(this.flag);
+  }
+
+
+  ngDoCheck(){
+    this.filter;
+
+
+    console.log('filter chenges == '+this.filter);
+  }
+
+  ngOnChanges(changes:SimpleChanges):void {
+    let chng = changes;
+
+  }
+  ngAfterContentChecked() {
+    // Component content has been Checked
+
+  }
+  ngAfterViewInit() {
+    // Component views are initialized
+
+  }
+  ngAfterViewChecked() {
+    // Component views have been checked
+
+  }
+  ngOnDestroy():void {
+
 
   }
 

@@ -2,17 +2,25 @@ import {Injectable} from '@angular/core'
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import 'rxjs/add/operator/map';
 import {Blog} from "../content/blog_content/Blog";
+
 import { AuthProviders, AuthMethods } from 'angularfire2';
+import {HashTags} from "../content/blog_content/HashTags";
 
 
 
 @Injectable()
 export class FirebaseService{
   bu: FirebaseListObservable<Blog[]>;
-  tags: FirebaseListObservable<String[]>;
-  items: FirebaseListObservable<any[]>;
+  filter1: FirebaseListObservable<Blog[]>;
+  filter2: FirebaseListObservable<Blog[]>;
+
+  tags: FirebaseListObservable<string[]>;
+ items: FirebaseListObservable<any[]>;
   error:any;
   name:any;
+  dom:any;
+  blog:Blog;
+  i:number;
 
 
   constructor(private _af:AngularFire){
@@ -24,6 +32,7 @@ export class FirebaseService{
         this.name=auth;
       }
     });
+this.dom=_af.database.list('/hashtags',{ preserveSnapshot: true });
 
 
   }
@@ -36,7 +45,7 @@ getBu(){
 }
   getTags(){
 
-    this.tags= this._af.database.list('/hashtag') as FirebaseListObservable<String[]>
+    this.tags= this._af.database.list('/hashtags') as FirebaseListObservable<string[]>
     return this.tags;
   }
 
@@ -53,7 +62,64 @@ getBu(){
   addTag(newHashTags){
 
 
+
+    return  this.tags.push(newHashTags);
+
+
 }
+  updatePostComment(key, updComment){
+
+   /* return this.bu.update(key, updComment);*/
+   return this.bu.update(key, updComment);
+
+  }
+
+
+
+    getBlogTag(){
+      /*if(tag != null){
+
+        this.filter1 = this._af.database.list('/blog', {
+          query: {
+            orderByChild: 'hashtags1',
+            equalTo: tag
+          }
+
+        });
+
+        this.filter2= this._af.database.list('/blog', {
+          query: {
+            orderByChild: 'hashtags2',
+            equalTo: tag
+          }
+
+        });
+
+       )
+
+
+
+                } else {*/
+        this.bu = this._af.database.list('/blog') as
+          FirebaseListObservable<Blog[]>
+
+
+      return this.bu;
+    }
+
+
+  addComment(newComment,id){
+  /*  this.bu= this._af.database.list('/blog')
+    //return this.bu[id].comments.push(newComment);
+    this.bu= this._af.database.list('/blog') as FirebaseListObservable<Blog[]>
+    console.log(this.bu+'xzXzXz');*/
+
+
+  }
+  /*addNewComment(post,newComment){
+    return this.bu..push(post.comments.newComment);
+
+  }*/
   /*onSubmit(formData) {
     if(formData.valid) {
       console.log(formData.value);

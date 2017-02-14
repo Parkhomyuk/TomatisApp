@@ -8,6 +8,9 @@ import {OnInit} from "../../../../node_modules/@angular/core/src/metadata/lifecy
 import {Coment} from "../content/blog_content/coment";
 import {FirebaseListObservable } from 'angularfire2';
 import {FirebaseService} from "../service/firebase.service";
+import {NgForm} from "../../../../node_modules/@angular/forms/src/directives/ng_form";
+import {arCom} from "../content/blog_content/arCom";
+
 
 @Component({
   selector: 'blogsingle',
@@ -22,25 +25,40 @@ export class BlogsingleComponent implements OnInit,OnDestroy{
   photo: any;
   name: any;
 
+  private key: number;
+  private subscription: Subscription;
+  private arc:arCom;
   public id:number;
+
   private blog:Blog;
   private blogs:Blog[];
-  private blogs2:Blog[];
+  private bloggg:Blog;
   private date:number;
   private header:string;
   private image:string;
   private author:string;
   private content:string;
   private ncomments:number;
-  private coments:Coment[];
+  private comments:Coment[];
+  private comment:Coment;
   private hashtags:String[];
+  private hashtags1:string;
+  private hashtags2:string;
+  private hashtags3:string;
+  private hashtags4:string;
   private sub:any;
 
+  /*Comment-values=====================*/
+  idCom:number;
+  dateComNow:number=Date.now();
+  dateCom:number;
+  currentDate:number;
+  isBlog:boolean= false;
 
 
-  /*constructor(private activatedRoute: ActivatedRoute, private blogService: BlogService){
 
-  }*/
+
+
 
 
   constructor(private activatedRoute: ActivatedRoute,private _firebaseService:FirebaseService, public af: AngularFire ) {
@@ -55,30 +73,11 @@ export class BlogsingleComponent implements OnInit,OnDestroy{
         this.photo=auth.auth.photoURL;
 
 
-      } else {
-
       }
     });
-
-  }
- /* ngOnInit():void {
-   this.sub= this.activatedRoute.params.subscribe(params=>this.id=+params['id']);
-    this.blog=this.blogService.getSingleBlog(this.id);
-
-    this.date=this.blog.date;
-    this.header=this.blog.header;
-    this.image=this.blog.image;
-    this.author=this.blog.author;
-    this.content=this.blog.content;
-    this.ncoments=this.blog.ncoments;
-    this.coments=this.blog.coment;
+    this.subscription = activatedRoute.params.subscribe(params=>this.key=params['$key']);
   }
 
-
-  ngOnDestroy():void {
-    this.sub.unsubscribe();
-
-  }*/
   onSubmit(formData) {
     if(formData.valid) {
       console.log(formData.value);
@@ -168,10 +167,15 @@ export class BlogsingleComponent implements OnInit,OnDestroy{
 
 
   ngOnInit():void {
+    console.log(this.key);
+
 
     this._firebaseService.getBu().subscribe(bu=>{
       this.blogs=bu;
+
       let f=this.id;
+      let k=this.key;
+      console.log('ckxmz,mc.zx'+"-"+f+"-"+k+" "+f);
       let blog_single=this.blog;
       this.blogs.forEach(function(blog, i, blogs) {
         if(blog.id==f) {
@@ -181,15 +185,34 @@ export class BlogsingleComponent implements OnInit,OnDestroy{
 
       });
 
+      this.bloggg=blog_single;
       this.date= blog_single.date;
       this.header=blog_single.header;
       this.image=blog_single.image;
       this.author=blog_single.author;
       this.content=blog_single.content;
-      this.ncomments=blog_single.ncomments;
-      this.coments=blog_single.coment;
+      this.comments=blog_single.comments;
       this.hashtags=blog_single.hashtags;
+      this.hashtags1=blog_single.hashtags1;
+      this.hashtags2=blog_single.hashtags2;
+      this.hashtags3=blog_single.hashtags3;
+      this.hashtags4=blog_single.hashtags4;
+
+
+      this.currentDate=new Date().getTime();
+     if(blog_single.comments!=undefined){
+       this.isBlog=true;
+       this.ncomments=blog_single.comments.length;
+       this.comments=blog_single.comments;
+     }
+
+
+
+
+
     });
+
+
 
     this.sub= this.activatedRoute.params.subscribe(params=>this.id=+params['id']);
 
@@ -212,12 +235,49 @@ export class BlogsingleComponent implements OnInit,OnDestroy{
     let b= document.getElementById('member').hidden=false;
   }
 
+  onSubmit1(form){
+   /* this.comment.id=this.coments.length;*/
+    let comment: Comment= (this.comment.date=this.dateComNow,
+    this.comment.textcomment=form.textcomment,
+    this.comment.author=this.name);
+    /*this.comment.date=this.dateComNow;
+    this.comment.textcomment=formData;
+    this.comment.author=this.name;*/
 
+
+  }
+  onComment(event:Event,comment:string){
+   event.preventDefault();
+    let dateCom=Date.now();
+    let comment1= new Coment(dateCom,comment,this.name);
+
+    this.bloggg.comments;
+    this.bloggg.comments.push(comment1);
+
+    let comments:Coment[]=this.bloggg.comments;
+    this.arc= new arCom(comments);
+
+
+
+
+    console.log(this.key);
+    console.log(this.bloggg);
+    console.log(this.bloggg.comments[0]+'lllllllllllllllllllll');
+    this._firebaseService.updatePostComment(this.key,this.arc);
+
+
+/*this.blog.comments.push(comment);
+    console.log(comment.author+" "+comment.date+""+comment.textcomment+(this.id-1)+" pochemu" );*/
+
+    console.log(this.bloggg);
+    console.log(this.blogs.keys().toString);
+    console.log(this.currentDate);
+  }
 
 
   ngOnDestroy():void {
     this.sub.unsubscribe();
-
+    this.subscription.unsubscribe();
   }
 
 

@@ -2,7 +2,8 @@
 <div class="row">
   <div class="col-md-12">
     <div class="col-md-12" id="m-contact" data-animated="0">
-      <h3>Send us a message</h3>
+      <h3 *ngIf="lang=='rus'">Пошлите сообщение</h3>
+      <h3 *ngIf="lang=='heb'">לשלוח הודעה</h3>
       <form class="contact-form" data-animated="0" id="contactForm" action="php/contact.php" method="post">
         <div class="row">
           <div class="col-md-6">
@@ -34,11 +35,13 @@
         <p><span class="error-ico"></span> There was a problem sending your message. Please try again.</p>
       </div>
       <div id="incompleteMessage" class="statusMessage">
-        <p>Please complete all the fields in the form before sending.</p>
+        <p *ngIf="lang=='rus'">Please complete all the fields in the form before sending.</p>
+        <p *ngIf="lang=='heb'">אנא מלא את כל השדות בטופס לפני השליחה.</p>
       </div>
 
       <div class="contact-info" data-animated="0">
-        <h4>Contact Info</h4>
+        <h4 *ngIf="lang=='rus'">Свяжитесь с нами</h4>
+        <h4 *ngIf="lang=='heb'">צור איתנו קשר</h4>
         <ul>
           <li><i class="fa fa-home"></i> Zvulun 14 st. Kiryat-Ata, Israel.</li>
           <li><i class="fa fa-phone"></i> +972-54-453-2763<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +972-4-635-3064</li>

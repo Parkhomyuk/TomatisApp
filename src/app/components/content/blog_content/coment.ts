@@ -1,5 +1,8 @@
 export class Coment {
-  id:number;
-  comenttext:string;
+  constructor(public date:number, public textcomment:string,public author:string) {
+
+  }
+
+
 }
 

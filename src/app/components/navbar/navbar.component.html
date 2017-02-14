@@ -10,7 +10,8 @@
             </button>
 
             <a class="navbar-brand" href="./index.html">
-              <p >Центр развития речи и <br>коррекции поведения</p>
+              <p *ngIf="lang=='rus'" >Центр развития речи и <br>коррекции поведения</p>
+              <p *ngIf="lang=='heb'">Tomatis Nilona<br>-מרכז להתפתחות הילד וניתוח התנהגות</p>
               <img src="img/logoTomatis.png" class="img-responsive" alt=""/>
 
             </a>
@@ -18,24 +19,40 @@
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right menu-effect">
-              <li class="current"><a href="./index.html" data-hover="Главная">Главная</a></li>
-              <li class="current"><a  routerLink="/about" data-hover="О&nbsp;Нас&nbsp" *ngIf="lang=='rus'">О Нас</a><li>
-              <li class="current"><a  routerLink="/about" style="font-size: 3vh" data-hover="עלינו"  *ngIf="lang=='heb'">עלינו</a><li>
-                <a class="dropdown" data-hover="Услуги&nbsp;&#9663;">Услуги &#9662;</a>
+              <li class="current"><a style="color:rgba(0,0,0,0.5)"  href="index.html"   data-hover="Главная" *ngIf="lang=='rus'">Главная</a></li>
+              <li class="current"><a    href="index.html" style="font-size: 2.5vh; color:rgba(0,0,0,0.5)" data-hover="ראשי" *ngIf="lang=='heb'">  ראשי   </a></li>
+              <li class="current"><a style="color:rgba(0,0,0,0.5)"  routerLink="/about" data-hover="О&nbsp;Нас&nbsp" *ngIf="lang=='rus'">О Нас</a><li>
+              <li class="current"><a    routerLink="/about" style="font-size: 2.5vh; color:rgba(0,0,0,0.5)" data-hover="עלינו"  *ngIf="lang=='heb'">עלינו</a><li>
+                <a class="dropdown"  style="color:rgba(0,0,0,0.5)" data-hover=" . " ><div *ngIf="lang=='rus'">Услуги &#9662;</div><div style="font-size: 2.5vh;color:rgba(0,0,0,0.5)" *ngIf="lang=='heb'">שרותים &#9662;</div></a>
+
                 <ul class="v-dropdown">
-                  <li><a routerLink="/servicepage" data-hover="Нейрологопедия&nbsp;">Нейрологопедия</a></li>
-                  <li><a routerLink="/servicepage2" data-hover="TOMATIS&nbsp;для&nbsp;детей">TOMATIS для детей</a></li>
-                  <li><a routerLink="/servicepage3" data-hover="TOMATIS&nbsp;для&nbsp;взрослых">TOMATIS для взрослых</a></li>
-                  <li><a routerLink="/servicepage4" data-hover="Альтернативная&nbsp;медицина">Альтернативная медицина</a></li>
-                  <li><a routerLink="/servicepage5" data-hover="Медицинский&nbsp;туризм">Медицинский туризм</a></li>
+                  <li><a routerLink="/servicepage" *ngIf="lang=='rus'" data-hover="Нейрологопедия&nbsp;">Нейрологопедия</a></li>
+                  <li><a routerLink="/servicepage2" *ngIf="lang=='rus'" data-hover="TOMATIS&nbsp;для&nbsp;детей">TOMATIS для детей</a></li>
+                  <li><a routerLink="/servicepage3" *ngIf="lang=='rus'" data-hover="TOMATIS&nbsp;для&nbsp;взрослых">TOMATIS для взрослых</a></li>
+                  <li><a routerLink="/servicepage4" *ngIf="lang=='rus'" data-hover="Альтернативная&nbsp;медицина">Альтернативная медицина</a></li>
+                  <li><a routerLink="/servicepage5" *ngIf="lang=='rus'" data-hover="Медицинский&nbsp;туризм">Медицинский туризм</a></li>
+
+                  <li><a routerLink="/servicepage" *ngIf="lang=='heb'" data-hover="נירופידבק&nbsp;">נירופידבק</a></li>
+                  <li><a routerLink="/servicepage2" *ngIf="lang=='heb'" data-hover="TOMATIS&nbsp;לילדים">TOMATIS לילדים</a></li>
+                  <li><a routerLink="/servicepage3" *ngIf="lang=='heb'" data-hover="TOMATIS&nbsp;למבוגרים">TOMATIS למבוגרים</a></li>
+                  <li><a routerLink="/servicepage4" *ngIf="lang=='heb'" data-hover="." >רפואה אלטרנטיבית</a></li>
                 </ul>
-              </li>
-              <li><a routerLink="/question" data-hover="Вопросы&nbsp;и&nbsp;ответы">Вопросы и ответы</a></li>
-              <li><a routerLink="/blogpage" data-hover="Blog">Blog</a></li>
-              <li><a routerLink="/post" data-hover="Магазин&nbsp;">Магазин</a></li>
-              <li><a routerLink="/contactpage" data-hover="Контакты">Контакты</a></li>
+
+
+
+
+              <li><a routerLink="/question" *ngIf="lang=='rus'" data-hover="Вопросы&nbsp;и&nbsp;ответы">Вопросы и ответы</a></li>
+              <li><a routerLink="/question" style="font-size: 2.5vh; color:rgba(0,0,0,0.5)" *ngIf="lang=='heb'" data-hover=" . " > שאלות ותשובות </a></li>
+             
+
+              <li><a routerLink="/blogpage" *ngIf="lang=='rus'" data-hover="Blog">Blog</a></li>
+              <li><a routerLink="/blogpage" style="font-size: 2.5vh; color:rgba(0,0,0,0.5)" *ngIf="lang=='heb'" data-hover="בלוג">בלוג</a></li>
+              <li><a routerLink="/post" *ngIf="lang=='rus'" data-hover="Магазин&nbsp;">Магазин</a></li>
+              <li><a routerLink="/post" style="font-size: 2.5vh; color:rgba(0,0,0,0.5)" *ngIf="lang=='heb'" data-hover="חנות&nbsp;">חנות</a></li>
+              <li><a routerLink="/contactpage" *ngIf="lang=='rus'" data-hover="Контакты">Контакты</a></li>
+              <li><a routerLink="/contactpage" style="font-size: 2.5vh; color:rgba(0,0,0,0.5)" *ngIf="lang=='heb'" data-hover="קשר">קשר</a></li>
               <li>
-                <a class="dd" data-hover="Язык&nbsp;&#9663;">Язык &#9662;</a>
+                <a class="dd" data-hover="language&nbsp;&#9663;">language &#9662;</a>
                 <ul class="v-dd">
                   <li><a id='heb'  (click)="choose('heb')" data-hover="Hebrew&nbsp;" style="cursor: pointer"><img src="img/icons/hebrew.png" style="width: 3vw" ></a></li>
                   <li><a id='rus' (click)="choose('rus')" data-hover="Russia&nbsp;" style="cursor: pointer"><img src="img/icons/russian.png" style="width: 3vw" ></a></li>
@@ -53,7 +70,8 @@
             <li><a href="https://www.facebook.com/NilonaTomatis/"><i class="fa fa-facebook"></i></a></li>
 
           </ul>
-          <p style="text-align: center"> Мы в facebook</p>
+          <p style="text-align: center" *ngIf="lang=='rus'" > Мы в facebook</p>
+          <p style="text-align: center" *ngIf="lang=='heb'">  אנחנו בפייסבוק </p>
         </div>
         <div class="m-hide"><i class="fa fa-plus-circle"></i></div>
         <!-- Hidden Content -->

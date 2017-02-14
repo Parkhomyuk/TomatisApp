@@ -44,6 +44,7 @@ Version:1.0
 	24. Sidebar Styles
 	25. Post Page
 
+
 -------------------------------------------------------------------*/
 
 /*-------------------------------------------------
@@ -597,6 +598,7 @@ text-align: center;
 	text-align: center;
 	margin: 0 0 20px;
   font-family: 'Prosto One', cursive;
+  font-family: 'Secular One', sans-serif;
 }
 #welcome h5{
   text-align: center;
@@ -1061,6 +1063,7 @@ text-align: center;
 	/*position: relative;*/
 }
 
+
 .date {
 	width: 62px;
 	height: 62px;
@@ -1210,6 +1213,7 @@ height: 4vh;
 }
 .hash p{
   color: #d58512;
+  height: 3vh;
 }
 
 /*-------------------------------------------------
@@ -3771,7 +3775,56 @@ aside {
   color: #717171;
   margin: 20px 0 30px;
 }
+.btn span.glyphicon {
+  opacity: 0;
+}
+.btn.active span.glyphicon {
+  opacity: 1;
+}
+.m-tags {
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 5px;
+  display: table;
+}
+.m-tags h5{
+  color: black;
+  text-align: left;
+}
+.m-tags ul {
+  padding: 0;
+  margin: 0 -5px;
+}
 
+.m-tags ul li {
+  float: left;
+  list-style: none;
+  margin: 0 5px 10px;
+}
+
+.m-tags ul li p {
+  font-size: 12px;
+  color: #fef5fd;
+  padding: 5px 10px;
+  border: 1px solid #333333;
+  display: table;
+  background: #030926;
+  cursor: pointer;
+}
+.m-tags .tagBack {
+  font-size: 12px;
+  color: #ffffff;
+  padding: 5px 10px;
+  border: 1px solid #333333;
+  display: table;
+  background: #5d3587;
+  cursor: pointer;
+  margin-top: 1vh;
+}
+
+.m-tags ul li p:hover {
+  color: #fff;
+  background: #5d3587;
+}
 
 
 

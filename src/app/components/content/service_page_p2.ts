@@ -1,9 +1,9 @@
 
-//noinspection TypeScriptCheckImport
-import {ServicePage2} from "../pages/servicepage2.component";
+
 //noinspection TypeScriptValidateTypes
 
-export const SERVICEPAGE2: ServicePage2[] = [
+import {ServicePage} from "./servicePage";
+export const SERVICEPAGE2: ServicePage[] = [
   { "id": 21,
     pictures:"img/serv/service21.jpg",
     "title":"Задержка речевого развития",

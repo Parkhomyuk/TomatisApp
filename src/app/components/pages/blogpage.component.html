@@ -42,63 +42,99 @@
             <div class="col-md-6 col-lg-6" data-animated="0" *ngFor="let blog of bu let i=index">
               <div class="item" *ngIf="i<6" >
 
+                <div *ngIf="flag==null">
+
+                  <div class="mb-thumb">
+                    <div  >
+                      <img  src='{{blog.image}}' class="img-responsive" alt="pictures" style="height: 220px; width: auto"/>
+                    </div>
+                    <div class="date">{{blog.date| date :'longDate'}}</div>
+                    <span class="rmore"><p [routerLink]="['/blogsingle',blog.id ,blog.$key]" >{{blog.button}}</p></span>
+                  </div>
+                  <h4 class="blogh"><a [routerLink]="['/blogsingle',blog.id ,blog.$key]">{{blog.header}}</a></h4>
+                  <div class="blog-meta">
+                    <span ><i class="fa fa-comments"></i>  comments</span>
+                    <span><i class="fa fa-user"></i> {{blog.author}}</span>
+
+                  </div>
+
+                  <p class="blog_header" >{{blog.content}}</p>
+                  <div class="container hashtag">
+                    <h5><i class="fa fa-slack" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;hashtags</h5>
+                    <div class="row" >
+
+                      <!--<div class="col-md-3 hash" *ngFor="let hash of blog.hashtags">
+                        <p style="color:#d58512 ">{{hash}}</p>
+                      </div>-->
+                      <div class="hashBlog">
+                        <div class="col-md-3 hash" >
+                          <p style="color:#d58512 ">{{blog.hashtags1}}</p>
+                        </div>
+                        <div class="col-md-3 hash" >
+                          <p style="color:#d58512 " >{{blog.hashtags2}}</p>
+                        </div>
+                        <div class="col-md-3 hash" >
+                          <p style="color:#d58512 ">{{blog.hashtags3}}</p>
+                        </div>
+                        <div class="col-md-3 hash" >
+                          <p style="color:#d58512 ">{{blog.hashtags4}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line"></div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6" data-animated="0" *ngFor="let blog of blogs2 let i=index">
+                <div *ngIf="flag==blog.hashtags1||flag==blog.hashtags2||flag==blog.hashtags3||flag==blog.hashtags4">
+
                 <div class="mb-thumb">
                   <div  >
                     <img  src='{{blog.image}}' class="img-responsive" alt="pictures" style="height: 220px; width: auto"/>
                   </div>
                   <div class="date">{{blog.date| date :'longDate'}}</div>
-                  <span class="rmore"><p [routerLink]="['/blogsingle', blog.id]">{{blog.button}}</p></span>
+                  <span class="rmore"><p [routerLink]="['/blogsingle',blog.id ,blog.$key]" >{{blog.button}}</p></span>
                 </div>
-                <h4 class="blogh"><a [routerLink]="['/blogsingle', blog.id]">{{blog.header}}</a></h4>
+                <h4 class="blogh"><a [routerLink]="['/blogsingle',blog.id ,blog.$key]">{{blog.header}}</a></h4>
                 <div class="blog-meta">
-                  <span><i class="fa fa-comments"></i>{{blog.ncomments}} comments</span>
+                  <span ><i class="fa fa-comments"></i>  comments</span>
                   <span><i class="fa fa-user"></i> {{blog.author}}</span>
+
                 </div>
 
                 <p class="blog_header" >{{blog.content}}</p>
                 <div class="container hashtag">
-                  <h5><i class="fa fa-slack" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;hashtags</h5>
-                  <div class="row">
+                 <h5><i class="fa fa-slack" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;hashtags</h5>
+                  <div class="row" >
 
-                <div class="col-md-3 hash" *ngFor="let hash of blog.hashtags">
+                <!--<div class="col-md-3 hash" *ngFor="let hash of blog.hashtags">
                   <p style="color:#d58512 ">{{hash}}</p>
-                </div>
+                </div>-->
+                    <div class="hashBlog">
+                    <div class="col-md-3 hash" >
+                      <p style="color:#d58512 ">{{blog.hashtags1}}</p>
+                    </div>
+                    <div class="col-md-3 hash" >
+                      <p style="color:#d58512 " >{{blog.hashtags2}}</p>
+                    </div>
+                    <div class="col-md-3 hash" >
+                      <p style="color:#d58512 ">{{blog.hashtags3}}</p>
+                    </div>
+                    <div class="col-md-3 hash" >
+                      <p style="color:#d58512 ">{{blog.hashtags4}}</p>
+                    </div>
+                    </div>
                   </div>
                   <div class="line"></div>
                 </div>
               </div>
-            </div>
 
+</div>
+              <div class="page-nav" data-animated="0" *ngIf="flag==null">
 
-
-<!--
-            <div class="col-md-6 col-lg-6" data-animated="0" *ngFor="let blog of blogs let i=index">
-              <div class="item" *ngIf="i<6" >
-
-                <div class="mb-thumb">
-                  <div>
-                    <img  src='{{blog.image}}' class="img-responsive" alt=""/>
-                  </div>
-                  <div class="date">{{blog.date}}</div>
-                  <span class="rmore"><p [routerLink]="['/blogsingle', blog.id]">read more</p></span>
-                </div>
-                <h4 class="blogh"><a [routerLink]="['/blogsingle', blog.id]">{{blog.header}}</a></h4>
-                <div class="blog-meta">
-                  <span><i class="fa fa-comments"></i>{{blog.ncoments}} comments</span>
-                  <span><i class="fa fa-user"></i> {{blog.author}}</span>
-                </div>
-
-                <p class="blog_header" >{{blog.content}}</p>
-
-              </div>
-            </div>-->
-
-
-
-
-              <div class="page-nav" data-animated="0">
-
-                <ul>
+                <ul style="text-align: left" >
                   <li *ngFor="let blog of blogs2 let i=index"   ><div *ngIf="i%6==0" (click)="onSelectPage(i/6+1)"><span >{{i/6+1}}</span></div></li>
                 </ul>
 
@@ -115,11 +151,43 @@
     {{item.text}}
   </li>
 </ul>-->
-<div class="container" style="text-align: center" *ngIf="email=='parkhomyukalex@gmail.com'" >
+<div class="container" style="text-align: center">
+<div class="row">
+<div class="container"  *ngIf="email=='parkhomyukalex@gmail.com'" >
   <form routerLink="/post">
 
 <button class="btn btn-warning" style="color:white; margin-bottom: 1vh">Add Post to Blog</button>
   </form>
+</div>
+<!--<div class="btn-group" style="margin-bottom: 1vh">
+<button type="button" data-toggle="dropdown" class="btn btn-warning dropdown-toggle"># tags <span class="caret"></span></button>
+<ul class="dropdown-menu">
+  <li *ngFor="let tag of tags"><a href="#">{{tag}}</a></li>
+  &lt;!&ndash;<li><a href="#">Пункт 2</a></li>
+  <li class="divider"></li>
+  <li><a href="#">Пункт 3</a></li>&ndash;&gt;
+</ul>
+</div>-->
+<div class="container">
+  <div class="row">
+    <!-- Tags -->
+    <div class="line"></div>
+    <div class="side-widget m-tags">
+      <div>
+        <p class="tagBack" (click)="hashtagFilter(null)"><i class="fa fa-arrow-left" aria-hidden="true"></i>back</p>
+      </div>
+      <h5>Hashtags #</h5>
+
+      <ul>
+        <li *ngFor="let tag of tags let i=index" (click)="hashtagFilter(tag.$value)"><p>#{{tag.$value}}</p></li>
+
+      </ul>
+
+    </div>
+  </div>
+
+</div>
+</div>
 </div>
   <contact></contact>
 

@@ -1,61 +1,62 @@
 <div class="row" data-animated="0">
   <div class="col-md-12">
     <div id="services">
-      <h3 style="text-align: center; color: white ">Услуги</h3>
+      <h3 style="text-align: center; color: white ">{{content.mainHead}}</h3>
       <ul>
         <li data-animated="0">
           <a routerLink="/servicepage">
           <img src='./img/icons/nero1.png'>
-          <h4>Нейрологопедия</h4>
-          <p>Логопед</p>
-           <p> Эрготерапевт</p>
-            <p>Сенсорная интеграция</p>
-            <p>ABA</p>
+          <h4>{{content.page1_h4}}</h4>
+          <p>{{content.page1_p1}}</p>
+           <p> {{content.page1_p2}}</p>
+            <p>{{content.page1_p3}}</p>
+            <p>{{content.page1_p4}}</p>
           </a>
         </li>
         <li data-animated="0">
-          <a id="page1" routerLinl="/servicepage1">
+
+          <a id="page1" routerLink="/servicepage2">
           <img src='./img/icons/children-btn1.png'>
-          <h4>TOMATIS для детей</h4>
-          <p>Подготовка к школе</p>
-          <p>  Изучение иностранных языков</p>
-          <p>  Задержка речевого развития</p>
-          <p>  Проблемы обучения</p>
-          <p>  Дефицит внимания</p>
-          <p>  Аутизм</p>
-          <p>  Нарушение координации движения</p>
-          <p>  Синдром дауна</p>
+          <h4>{{content.page2_h4}}</h4>
+          <p>{{content.page2_p1}}</p>
+          <p> {{content.page2_p2}}</p>
+          <p> {{content.page2_p3}}</p>
+          <p>  {{content.page2_p4}}</p>
+          <p>  {{content.page2_p5}}</p>
+          <p>  {{content.page2_p6}}</p>
+          <p>  {{content.page2_p7}}</p>
+          <p>  {{content.page2_p8}}</p>
             </a>
         </li>
         <li data-animated="0">
-          <a id="page2" routerLinl="/servicepage2">
+          <a id="page2" routerLink="/servicepage3">
           <img src='./img/icons/adult-btn1.png'>
-          <h4>TOMATIS для взрослых</h4>
-          <p>Изучение иностранных языков</p>
-          <p>  Проблемы обучения</p>
-          <p>  Нарушения координации движения</p>
-          <p>  Услуги для золотого возраста</p>
+            <h4>{{content.page3_h4}}</h4>
+            <p>{{content.page3_p1}}</p>
+            <p> {{content.page3_p2}}</p>
+            <p> {{content.page3_p3}}</p>
+            <p>  {{content.page3_p4}}</p>
           </a>
         </li>
       </ul>
       <ul>
 
         <li data-animated="0">
-          <a id="page3" routerLinl="/servicepage3">
+          <a id="page3" routerLink="/servicepage4">
           <img src='./img/icons/notrad-btn1.png'>
-          <h4>Альтернативная медицина</h4>
-          <p>Остеопатия</p>
-          <p> Гомеопатия</p>
-          <p>Озонотерапия</p>
-          <p>Метод Фельденкрайза</p>
+            <h4>{{content.page4_h4}}</h4>
+            <p>{{content.page4_p1}}</p>
+            <p> {{content.page4_p2}}</p>
+            <p> {{content.page4_p3}}</p>
+            <p>  {{content.page4_p4}}</p>
           </a>
         </li>
-        <li data-animated="0">
-          <a id="page1" routerLinl="/servicepage4">
+        <li data-animated="0" *ngIf="lang=='rus'">
+          <a id="page4" routerLink="/servicepage5">
           <img src='./img/icons/med1.png'>
-          <h4>Медицинский туризм</h4>
-          <p>Лечение</p>
-           <p> Туризм</p>
+            <h4>{{content.page5_h4}}</h4>
+            <p>{{content.page5_p1}}</p>
+            <p> {{content.page5_p2}}</p>
           </a>
         </li>
 

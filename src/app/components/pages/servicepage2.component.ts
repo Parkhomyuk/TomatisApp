@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ServicePage} from "../content/servicePage";
+import {Paragraph2} from "../content/paragraph2";
 //noinspection TypeScriptCheckImport
 import {SERVICEPAGE2} from "../content/service_page_p2";
 import {SERVICEPAGE2HEB} from "../content/service_page_p2HEB";
@@ -120,7 +122,7 @@ let SERVICEPAGE2: ServicePage2[] = [
 ];
 */
 
-class ServicePage2{
+/*class ServicePage2{
   id: number;
   title:string;
   pictures:string;
@@ -129,7 +131,7 @@ class ServicePage2{
 }
 class Paragraph2{
   list: string;
-}
+}*/
 
 @Component({
   selector: 'servicepage2',

@@ -56,7 +56,7 @@ const appRoutes: Routes=[
     component:BlogpageComponent
   },
   {
-    path:'blogsingle/:id',
+    path:'blogsingle/:id/:$key',
     component:BlogsingleComponent,
 
 

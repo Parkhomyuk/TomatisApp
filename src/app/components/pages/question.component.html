@@ -1,59 +1,10 @@
-<!--
-&lt;!&ndash; Question Content &ndash;&gt;
-<div class="row" data-animated="0">
-
-  <div class="col-md-12">
-    <div id="question">
-      <ul>
-        <li data-animated="0">
-          <div class="row">
-            <div class="col-md-2">
-          <i class="fa fa-question-circle" aria-hidden="true"></i>
-            </div>
-            <div class="col-md-10"></div>
-           <h4 style="text-align: left">Опасен ли метод "Томатис" ?</h4>
-          </div>
-        </li>
-        <li data-animated="0">
-          <i class="fa fa-question-circle" aria-hidden="true"></i>
-          <h4>Для чего нужны перерывы ?</h4>
-
-        </li>
-        <li data-animated="0">
-          <i class="fa fa-question-circle" aria-hidden="true"></i>
-          <h4>Можно ли комбинировать метод "Томатис" с другими методамитерапии ?</h4>
-
-        </li>
-        <li data-animated="0">
-          <i class="fa fa-question-circle" aria-hidden="true"></i>
-          <h4>Как скоро стану заметны результаты применения "Томатис" ?</h4>
-
-        </li>
-        <li data-animated="0">
-          <i class="fa fa-question-circle" aria-hidden="true"></i>
-          <h4>Почему аудиотренировки проходят в интенсивном темпе ?</h4>
-
-        </li>
-        <li data-animated="0">
-          <i class="fa fa-question-circle" aria-hidden="true"></i>
-          <h4>Почему выбрана музыка Моцарта ?</h4>
-          <p>wordpress themes</p>
-        </li>
-      </ul>
-
-    </div>
-
-</div>-->
-<!-- Vertical Tab -->
-
-<!-- Services Content -->
 <div class="row" data-animated="0">
   <div class="col-md-12">
     <div id="question">
-      <ul>
+     <!-- <ul>
         <li data-animated="0" (click)="onSelect(11)">
           <i class="fa fa-question-circle" aria-hidden="true"></i>
-          <h4 >Опасен ли метод "Томатис" ?</h4>
+          <h4 >{{}}</h4>
 
         </li>
 
@@ -85,7 +36,14 @@
 
         </li>
       </ul>
+-->
+      <ul>
+        <li *ngFor="let answer of answers" data-animated="0" (click)="onSelect(answer.id)">
+          <i class="fa fa-question-circle" aria-hidden="true"></i>
+          <h4 >{{answer.question}}</h4>
 
+        </li>
+        </ul>
     </div>
   </div>
   <div class="col-md-12">

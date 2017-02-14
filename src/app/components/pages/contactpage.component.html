@@ -3,7 +3,9 @@
 <div class="row">
   <div class="col-md-12">
     <div id="page-header" data-animated="0">
-      <h3><span>Contact Us</span></h3>
+      <h3 *ngIf="lang=='rus'"><span>Свяжитесь с нами</span></h3>
+      <h3 *ngIf="lang=='heb'"><span>תיצור איתנו קשר</span></h3>
+
       <ul class="bread_crumbs">
         <li><a href="#">home</a></li>
         <li>contact</li>
@@ -35,7 +37,8 @@
 
         <!-- Contact Form -->
         <div class="col-md-6" data-animated="0">
-          <h3>Send us a message</h3>
+          <h3 *ngIf="lang=='rus'">Отправте сообщение</h3>
+          <h3 *ngIf="lang=='heb'">שלח לנו הודעה</h3>
 
           <form class="contact-form" data-animated="0" id="contactForm" action="php/contact.php" method="post">
             <div class="mc-name">
@@ -72,8 +75,10 @@
       <div class="row">
         <div class="col-md-12">
           <div class="col-md-12 cf-info" data-animated="0">
-            <h3>Contact Info</h3>
-            <p>Вы можете связяться с нами по любому вопросу по следующим контактам</p>
+            <h3 *ngIf="lang=='rus'">Контактная информация</h3>
+            <h3 *ngIf="lang=='heb'">פרטים ליצירת קשר</h3>
+            <p  *ngIf="lang=='rus'">Вы можете связяться с нами по любому вопросу по следующим контактам</p>
+            <p  *ngIf="lang=='heb'">באפשרותך לפנות אלינו בכל נושא אנשי הקשר הבא</p>
             <ul>
               <li>
                 <span><i class="fa fa-home"></i></span>

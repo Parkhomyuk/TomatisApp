@@ -17,9 +17,9 @@
                 <img  src='{{blog.image}}' class="img-responsive" alt="pictures" style="height: 220px; width: auto"/>
               </div>
               <div class="date">{{blog.date| date :'longDate'}}</div>
-              <span class="rmore"><p [routerLink]="['/blogsingle', blog.id]">{{blog.button}}</p></span>
+              <span class="rmore"><p [routerLink]="['/blogsingle',blog.id ,blog.$key]">{{blog.button}}</p></span>
             </div>
-            <h4 class="blogh"><a [routerLink]="['/blogsingle', blog.id]">{{blog.header}}</a></h4>
+            <h4 class="blogh"><a [routerLink]="['/blogsingle',blog.id ,blog.$key]">{{blog.header}}</a></h4>
             <div class="blog-meta">
               <span><i class="fa fa-comments"></i>{{blog.ncomments}} comments</span>
               <span><i class="fa fa-user"></i> {{blog.author}}</span>
